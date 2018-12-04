@@ -37,6 +37,49 @@ export default class extends React.Component {
     }
   }
 
+  renderResearchNav(user) {
+    if (!user || !user.isResearcher) return null;
+
+    return (
+      <Nav navbar className="mr-auto">
+        <NavItem>
+          <Link href="/research">
+            <NavLink href="/research">Create project</NavLink>
+          </Link>
+        </NavItem>
+      </Nav>
+    );
+  }
+
+  renderOwnerNav(user) {
+    if (!user || user.isResearcher || user.isInternal) return null;
+
+    return (
+      <Nav navbar className="mr-auto">
+        <NavItem>
+          <Link href="/">
+            <NavLink href="/">My Data</NavLink>
+          </Link>
+        </NavItem>
+        <NavItem>
+          <Link href="/my-benefits">
+            <NavLink href="/my-benefits">My Benefits</NavLink>
+          </Link>
+        </NavItem>
+        <NavItem>
+          <Link href="/my-insights">
+            <NavLink href="/my-insights">My Insights</NavLink>
+          </Link>
+        </NavItem>
+        <NavItem>
+          <Link href="/shop">
+            <NavLink href="/shop">Shop</NavLink>
+          </Link>
+        </NavItem>
+      </Nav>
+    );
+  }
+
   render() {
     const { children, isAnonymous } = this.props;
 
@@ -50,34 +93,8 @@ export default class extends React.Component {
             <img src="/static/geneos-logo.svg" width="50" className="nav-logo" /> GENEOS
             </NavbarBrand>
           </Link>
-          {user && user.isResearcher && (
-            <Nav navbar className="mr-auto">
-              <NavItem>
-                <Link href="/research">
-                  <NavLink href="/research">Create project</NavLink>
-                </Link>
-              </NavItem>
-            </Nav>
-          )}
-          {user && !user.isResearcher && (
-            <Nav navbar className="mr-auto">
-              <NavItem>
-                <Link href="/">
-                  <NavLink href="/">My Data</NavLink>
-                </Link>
-              </NavItem>
-              <NavItem>
-                <Link href="/my-benefits">
-                  <NavLink href="/my-benefits">My Benefits</NavLink>
-                </Link>
-              </NavItem>
-              <NavItem>
-                <Link href="/my-insights">
-                  <NavLink href="/my-insights">My Insights</NavLink>
-                </Link>
-              </NavItem>
-            </Nav>
-          )}
+          {this.renderResearchNav(user)}
+          {this.renderOwnerNav(user)}
           <Nav navbar className="ml-auto">
             <NavItem className="nav-item-balance">
               <Earnings/>

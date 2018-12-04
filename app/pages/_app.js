@@ -12,6 +12,7 @@ export default class MyApp extends App {
     let sessionCookie;
     if (req) {
       sessionCookie = req.cookies && req.cookies[SESSION_COOKIE_NAME];
+      pageProps.path = req.pathname;
     }
 
     let user;

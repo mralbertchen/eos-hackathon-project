@@ -16,7 +16,7 @@ export default () => {
       <Meta title="GeneOS" />
 
       <Container className="landing-page">
-        <h1>GEM</h1>
+        <h1>GeneOS</h1>
       </Container>
     </LayoutMain>
   );

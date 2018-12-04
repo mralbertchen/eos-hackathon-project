@@ -33,10 +33,10 @@ export default class Earnings extends React.Component {
     const { lastEarnings, earnings } = this.state;
 
     return (
-      <div className="d-flex align-items-center">
+      <div className="d-flex align-items-center earnings">
         <img
-          src="/static/eos.svg"
-          style={{ width: 25, marginRight: 15 }}
+          src="/static/carbon-logo.svg"
+          style={{ width: 25, marginRight: 10 }}
         />
         <div>
           <div>
@@ -47,7 +47,7 @@ export default class Earnings extends React.Component {
               className="text-white"
               duration={2}
             />
-            <span className="card-heading">EOS</span>
+            <span className="currency">cUSD</span>
           </div>
           <div className="card-heading white-text">available</div>
         </div>
