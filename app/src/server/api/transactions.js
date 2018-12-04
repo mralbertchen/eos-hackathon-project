@@ -1,10 +1,12 @@
 import { Router } from 'express';
 
 import { getTxs } from './helper';
+import { isMocked } from './utils';
+import { getMockTransactions } from './data/transactions';
 
 const router = Router();
 
-/*
+/**
  { offerId: 0,
    tokenId: 0,
    from: 'jens',
@@ -13,13 +15,17 @@ const router = Router();
    projectName: 'cancer',
    duration: 3 }
  */
-
 router.get('/:name', async (req, res) => {
   const { name } = req.params;
   console.log('Get transactions for', name);
 
   try {
-    const data = await getTxs(name);
+    let data;
+    if (isMocked) {
+      data = getMockTransactions(name);
+    } else {
+      data = await getTxs(name);
+    }
 
     res.json({
       data,

@@ -67,7 +67,7 @@ export default class Initialize extends React.Component {
         requesting: false,
         done: true,
       });
-      this.props.jumpToStep(3);
+      this.props.jumpToStep(2);
     });
   };
 

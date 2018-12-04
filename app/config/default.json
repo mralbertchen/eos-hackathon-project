@@ -1,4 +1,5 @@
 {
+  "mock-eos": true,
   "users": [
     {
       "publicKey": "EOS8LoJJUU3dhiFyJ5HmsMiAuNLGc6HMkxF4Etx6pxLRG7FU89x6X",

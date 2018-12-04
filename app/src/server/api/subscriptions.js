@@ -3,7 +3,9 @@ import { Router } from 'express';
 import { DATA_REQUEST } from '../../constants/socket-events';
 import { messageClients } from '../sockets';
 import { acceptOffer, makeBatchOffers } from './helper';
-import { getFilteredListings } from './filter';
+import { isMocked } from './utils';
+import { acceptMockOffer, makeMockOffers, rejectMockOffer } from './data/transactions';
+import { getListings } from './listings';
 
 const router = Router();
 
@@ -13,7 +15,7 @@ router.post('/', async (req, res) => {
   const { user, formData } = req.body;
 
   // get listings
-  const listings = await getFilteredListings(formData);
+  const listings = await getListings(formData);
 
   const txs = listings.map(listing => ({
     id: listing.id,
@@ -21,7 +23,11 @@ router.post('/', async (req, res) => {
   }));
 
   try {
-    await makeBatchOffers(user.privateKey, user.name, txs, JSON.stringify(formData));
+    if (isMocked) {
+      makeMockOffers(user.privateKey, user.name, txs, JSON.stringify(formData));
+    } else {
+      await makeBatchOffers(user.privateKey, user.name, txs, JSON.stringify(formData));
+    }
   } catch (error) {
     console.error('Error sending offers:', error);
     return res.status(500).json({
@@ -54,6 +60,10 @@ router.post('/:name/reject', (req, res) => {
     });
   }
 
+  if (isMocked) {
+    rejectMockOffer(user.privateKey, user.name, request.offerId);
+  }
+
   return res.json({
     data: request,
   });
@@ -74,7 +84,11 @@ router.post('/:name/accept', async (req, res) => {
   }
 
   try {
-    await acceptOffer(user.privateKey, user.name, request.offerId);
+    if (isMocked) {
+      acceptMockOffer(user.privateKey, user.name, request.offerId)
+    } else {
+      await acceptOffer(user.privateKey, user.name, request.offerId);
+    }
 
     return res.json({
       data: request,

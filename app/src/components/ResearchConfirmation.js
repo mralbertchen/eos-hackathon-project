@@ -57,11 +57,13 @@ export default class ResearchConfirmation extends React.PureComponent {
               <span>{request.totalCost.toFixed(2)} EOS</span>
             </span>
           ))}
+{/*
           <ModalFooter>
             <Button color="primary">
               Download Dataset <FontAwesomeIcon icon={iconArrowRight} />
             </Button>
           </ModalFooter>
+*/}
         </ModalBody>
       </Modal>
     );

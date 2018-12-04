@@ -57,8 +57,8 @@ export default class extends React.Component {
     return (
       <Nav navbar className="mr-auto">
         <NavItem>
-          <Link href="/">
-            <NavLink href="/">My Data</NavLink>
+          <Link href="/dashboard">
+            <NavLink href="/dashboard">My Data</NavLink>
           </Link>
         </NavItem>
         <NavItem>

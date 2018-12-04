@@ -281,10 +281,10 @@ ol.progtrckr li.progtrckr-doing:after{
   
 }
 
-.form-control{
+.form-control {
   border:0;
   @include light-box-shadow;
-  padding:20px;
+  padding: 0 20px;
   @include default-typog;
   border-radius:0;
   color: $black;

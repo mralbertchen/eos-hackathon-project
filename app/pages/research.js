@@ -5,8 +5,7 @@ import StepZilla from 'react-stepzilla';
 
 import LayoutMain from '../src/layouts/main';
 import Meta from '../src/components/Meta'
-import ProjectDetails from '../src/components/researchSteps/ProjectDetails';
-import SampleSelection from '../src/components/researchSteps/SampleSelection';
+import ResearchProject from '../src/components/researchSteps/ResearchProject';
 import Initialize from '../src/components/researchSteps/Initialize';
 
 export default class extends Component {
@@ -39,14 +38,10 @@ export default class extends Component {
     const steps = [
       {
         name: <div className="step-head">Step 1<div className="step-sub">Project Details</div></div>,
-        component: <ProjectDetails data={form} onChange={this.handleChange} />
+        component: <ResearchProject data={form} onChange={this.handleChange} />,
       },
       {
-        name: <div className="step-head">Step 2<div className="step-sub">Sample Selection</div></div>,
-        component: <SampleSelection data={form} onChange={this.handleChange} />
-      },
-      {
-        name: <div className="step-head">Step 3<div className="step-sub">Initialize</div></div>,
+        name: <div className="step-head">Step 2<div className="step-sub">Initialize</div></div>,
         component: <Initialize data={form} />
       },
     ];

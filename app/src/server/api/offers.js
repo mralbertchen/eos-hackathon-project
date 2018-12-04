@@ -1,6 +1,8 @@
 import { Router } from 'express';
 
 import { getOffers } from './helper';
+import { isMocked } from './utils';
+import { getMockOffers } from './data/transactions';
 
 const router = Router();
 
@@ -19,7 +21,12 @@ router.get('/:name', async (req, res) => {
   console.log('Get offers for', name);
 
   try {
-    const data = await getOffers(name);
+    let data;
+    if (isMocked) {
+      data = getMockOffers(name);
+    } else {
+      data = await getOffers(name);
+    }
 
     res.json({
       data,

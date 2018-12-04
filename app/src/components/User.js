@@ -6,6 +6,7 @@ import '../styles/user.scss';
 import { offDataRequest, onDataRequest } from '../utils/sockets';
 import { getUsers, loginUser, logoutUser } from '../actions/users';
 import userStore from '../store/user';
+import TransactionStore from '../store/transactions';
 import PurchaseConfirmation from './PurchaseConfirmation';
 import { acceptRequest, rejectRequest } from '../actions/research';
 import { getOffers } from '../actions/offers';
@@ -39,6 +40,7 @@ export default class User extends React.Component {
 
   handleDataRequest = () => {
     window.setTimeout(this.loadOffers, 5000);
+    TransactionStore.updateEarnings();
   };
 
   loadOffers = () => {

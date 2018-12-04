@@ -12,10 +12,10 @@ export function filterRange(range, value) {
   return from <= value && value <= to;
 }
 
-export async function getFilteredListings(formData = {}) {
-  const data = await getListings();
+export function getListingFilter(formData) {
+  return listing => {
+    if (!listing) return false;
 
-  const filtered = data.filter(listing => {
     if (formData.ethnicity && listing.ethnicity !== formData.ethnicity) return false;
     if (!filterRange(formData.ageRange, listing.age)) return false;
     if (!filterRange(formData.weightRange, listing.weight)) return false;
@@ -23,7 +23,13 @@ export async function getFilteredListings(formData = {}) {
     if (!filterRange(formData.activityRange, listing.activity)) return false;
 
     return true;
-  });
+  };
+}
+
+export async function getFilteredListings(formData = {}) {
+  const data = await getListings();
+
+  const filtered = data.filter(getListingFilter(formData));
 
   return filtered;
 }
