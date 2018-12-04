@@ -95,11 +95,13 @@ export default class extends React.Component {
           </Link>
           {this.renderResearchNav(user)}
           {this.renderOwnerNav(user)}
-          <Nav navbar className="ml-auto">
-            <NavItem className="nav-item-balance">
-              <Earnings/>
-            </NavItem>
-          </Nav>
+          {user && (
+            <Nav navbar className="ml-auto">
+              <NavItem className="nav-item-balance">
+                <Earnings/>
+              </NavItem>
+            </Nav>
+          )}
           <Nav navbar className="ml-auto navbar-nav-right">
             <NavItem>
               <Link href="/">

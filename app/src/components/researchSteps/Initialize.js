@@ -90,6 +90,30 @@ export default class Initialize extends React.Component {
     );
   };
 
+  renderListingTable() {
+    const { listings, error } = this.state;
+
+    return (
+      <table>
+        <thead>
+        <tr>
+          <th>Age</th>
+          <th>Location</th>
+          <th>Weight</th>
+          <th>Sleep Range</th>
+          <th>Activity Level</th>
+          <th>Rate</th>
+        </tr>
+        </thead>
+        {error ? (
+          <tbody><tr><td>Error loading listings!</td></tr></tbody>
+        ) : (
+          <tbody>{listings && listings.map(this.renderListing)}</tbody>
+        )}
+      </table>
+    );
+  }
+
   renderConfirmation() {
     const { listings } = this.state;
     const { data } = this.props;
@@ -116,7 +140,7 @@ export default class Initialize extends React.Component {
   }
 
   render() {
-    const { listings, done, error } = this.state;
+    const { listings, done } = this.state;
 
     const totalCost = this.calculateTotalcost(listings);
 
@@ -133,41 +157,14 @@ export default class Initialize extends React.Component {
             <h4>Select your dataset</h4>
           </Col>
         </Row>
-        <div className="results-div">
-        <table>
-          <thead>
-            <tr>
-              <th>Age</th>
-              <th>Location</th>
-              <th>Weight</th>
-              <th>Sleep Range</th>
-              <th>Activity Level</th>
-              <th>Rate</th>
-            </tr>
-          </thead>
-          {error ? (
-            <tbody><tr><td>Error loading listings!</td></tr></tbody>
-          ) : (
-            <tbody>{listings && listings.map(this.renderListing)}</tbody>
-          )}
-        </table>
-        </div>
         <FormGroup>
-          <div className="summary-label">Select</div>
-          <div className="summary-input">
-            <Input type="select">
-              <option>First</option>
-            </Input>
-          </div>
-          <div className="summary-input">
-            <Input defaultValue={AUDIENCE_COUNT_DEFAULT} />
-          </div>
+          Number of available genomes: {listings && listings.length}
         </FormGroup>
         <FormGroup>
           <div className="summary-label">Total</div>
           <div className="summary-value">
           <img className="eos-summary-logo" src="/static/eos-pink.svg" height="40" />
-                
+
             {totalCost === null ? 'calculating...' : totalCost.toFixed(2)}
           </div>
           <div className="summary-currency">EOS</div>
