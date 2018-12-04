@@ -1,10 +1,17 @@
 import Document, { Head, Main, NextScript } from 'next/document'
+
 import '../src/utils/fontawesome';
 
 export default class MyDocument extends Document {
   static getInitialProps(ctx) {
     const { req } = ctx;
-    const pathname = req ? req.path : document.location.pathname;
+
+    let pathname;
+    if (req) {
+      pathname = req.path;
+    } else {
+      pathname = document.location.pathname;
+    }
 
     return {
       ...Document.getInitialProps(ctx),
@@ -18,7 +25,6 @@ export default class MyDocument extends Document {
     return (
       <html>
         <Head>
-          <link rel="stylesheet" href="/_next/static/style.css" />
         </Head>
 
         <body className={`page-${routeName}`}>

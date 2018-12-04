@@ -14,7 +14,8 @@
     {
       "publicKey": "EOS79eXQ1ZWekEWccU8iiWxiySvas1vrEJq86rC1bfokfKiRgNuXb",
       "privateKey": "5JsUMx2ScuEpPoPveMsbv9tpYcG3aDNe4rSuQSgq76BfYcWF3nK",
-      "name": "curtis"
+      "name": "curtis",
+      "isInternal": true
     }
   ]
 }

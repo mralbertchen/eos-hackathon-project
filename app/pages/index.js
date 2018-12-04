@@ -7,30 +7,17 @@ import Meta from '../src/components/Meta';
 import { getMyItems } from '../src/actions/my';
 import DataPanelList from '../src/components/DataPanelList';
 
-export default class extends Component {
-  static propTypes = {
-    data: PropTypes.shape({})
-  };
+/**
+ * Landing page
+ */
+export default () => {
+  return (
+    <LayoutMain isAnonymous>
+      <Meta title="GeneOS" />
 
-  state = {};
-
-  componentDidMount() {
-    getMyItems().then(data => {
-      this.setState({ data });
-    });
-  }
-
-  render() {
-    const { data } = this.state;
-
-    return (
-      <LayoutMain>
-        <Meta title="My Data" />
-
-        <Container className="my-data-page">
-          <DataPanelList data={data} />
-        </Container>
-      </LayoutMain>
-    );
-  }
-}
+      <Container className="landing-page">
+        <h1>GEM</h1>
+      </Container>
+    </LayoutMain>
+  );
+};

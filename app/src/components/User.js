@@ -4,7 +4,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 import '../styles/user.scss';
 import { offDataRequest, onDataRequest } from '../utils/sockets';
-import { getUsers } from '../actions/users';
+import { getUsers, loginUser, logoutUser } from '../actions/users';
 import userStore from '../store/user';
 import PurchaseConfirmation from './PurchaseConfirmation';
 import { acceptRequest, rejectRequest } from '../actions/research';
@@ -13,7 +13,7 @@ import { iconUser } from '../utils/fontawesome';
 
 export default class User extends React.Component {
   state = {
-    users: [],
+    users: userStore.getUsers(),
     dataRequests: [],
   };
 
@@ -21,12 +21,15 @@ export default class User extends React.Component {
     this.mounted = true;
     onDataRequest(this.handleDataRequest);
 
-    getUsers().then(response => {
-      if (!this.mounted) return;
-      this.setState({
-        users: response.data || [],
-      })
-    });
+    if (!this.state.users || !this.state.users.length) {
+      getUsers().then(response => {
+        if (!this.mounted) return;
+        userStore.setUsers(response.data);
+        this.setState({
+          users: response.data || [],
+        });
+      });
+    }
   }
 
   componentWillUnmount() {
@@ -51,10 +54,20 @@ export default class User extends React.Component {
 
   handleSelectUser(user) {
     userStore.setUser(user);
+    loginUser(user);
 
     getOffers(user).then(response => {
       if (!this.mounted) return;
       this.setState({ dataRequests: response.data });
+    });
+  }
+
+  handleLogout() {
+    logoutUser().then(() => {
+      userStore.setUser(null);
+      this.setState({
+        users: [],
+      });
     });
   }
 
@@ -108,10 +121,11 @@ export default class User extends React.Component {
           <DropdownToggle tag="a" className="nav-link nav-link-icon">
             <div className="user-name">{user && user.name}</div> <FontAwesomeIcon icon={iconUser} size="2x" />
           </DropdownToggle>
-          <DropdownMenu>
+          <DropdownMenu right>
             {users.map(user => (
               <DropdownItem key={user.name} onClick={() => this.handleSelectUser(user)}>{user.name}</DropdownItem>
             ))}
+            <DropdownItem key="logout" onClick={() => this.handleLogout()}>Logout</DropdownItem>
           </DropdownMenu>
         </UncontrolledDropdown>
         {this.renderDataRequests()}

@@ -6,6 +6,7 @@ import { API_BASE } from '../constants/api';
 import { Router } from './routes';
 import api from './api/index';
 import { initSockets } from './sockets';
+import cookieParser from 'cookie-parser';
 
 const port = parseInt(process.env.PORT, 10) || 3000;
 const dev = process.env.NODE_ENV !== 'production';
@@ -15,6 +16,7 @@ const handle = app.getRequestHandler();
 app.prepare()
   .then(() => {
     const expressApp = express();
+    expressApp.use(cookieParser());
 
     const server = http.createServer(expressApp);
     initSockets(server);

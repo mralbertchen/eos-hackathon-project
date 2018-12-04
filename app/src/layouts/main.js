@@ -28,15 +28,17 @@ export default class extends React.Component {
   setRoute() {
     const user = UserStore.getUser();
 
-    if (user.isResearcher) {
+    if (user && user.isResearcher) {
       Router.push('/research');
+    } else if (user && user.isInternal) {
+      Router.push('/geneos');
     } else {
       Router.push('/');
     }
   }
 
   render() {
-    const { children } = this.props;
+    const { children, isAnonymous } = this.props;
 
     const user = UserStore.getUser();
 
@@ -94,7 +96,7 @@ export default class extends React.Component {
             </NavItem>
           </Nav>
         </Navbar>
-        {user ? children : <span>Please login first</span>}
+        {isAnonymous || user ? children : <span>Please login first</span>}
       </div>
     );
   }

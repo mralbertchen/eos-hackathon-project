@@ -10,3 +10,11 @@ const api = axios.create({
 export function getUsers() {
   return api.get('/users').then(response => response.data);
 }
+
+export function loginUser(user) {
+  return api.post('/users/login', user).then(response => response.data);
+}
+
+export function logoutUser() {
+  return api.post('/users/logout').then(response => response.data);
+}
