@@ -176,7 +176,7 @@ $xxlarge-text: 28px;
 }
 
 @mixin default-typog{
-    font-family: 'Open Sans';
+    font-family: 'Gotham';
     font-size:$normal-text;
     color:$gray;
 }
@@ -192,7 +192,7 @@ $xxlarge-text: 28px;
 
 @mixin heading-typog{
     text-transform: uppercase;
-    font-family: 'Orion', Arial, Helvetica, sans-serif;
+    font-family: 'Gotham', Arial, Helvetica, sans-serif;
     font-size:0.5em;
     letter-spacing: $h-spacing;
 }
@@ -213,3 +213,4 @@ $xxlarge-text: 28px;
 .yellow-text{
     color:$yellow !important;
 }
+

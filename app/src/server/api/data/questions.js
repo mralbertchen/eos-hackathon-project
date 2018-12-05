@@ -17,7 +17,13 @@ export default [
   },
   {
     title: 'Which of the following best describes how close you live to the nearest farm fields? Your best guess is fine.',
-    answers: ['A quarter of a mile', '(0.4', 'km)', 'or', 'less', 'More', 'than', 'A quarter of a mile', '(0.4', 'km)', 'but', 'less', 'than', '1', 'mile', '(1.6', 'km)', 'More', 'than', '1', 'mile', '(1.6', 'km)', 'but', 'less', 'than', '5', 'miles', '(8', 'km)', '5', 'miles', '(8', 'km)', 'or', 'more', 'I\'m not sure'],
+    answers: [
+      'A quarter of a mile (0.4 km) or less',
+      'More than A quarter of a mile (0.4 km) but less than 1 mile (1.6 km)',
+      'More than 1 mile (1.6 km) but less than 5 miles (8 km)',
+      '5 miles (8 km) or more',
+      'I\'m not sure',
+    ],
   },
   {
     title: 'Do you have an os trigonum (extra bone behind your ankle bone)?',

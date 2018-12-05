@@ -3,7 +3,7 @@ import React, { Component } from 'react';
 export default class Diamond extends Component {
   render() {
     return (
-      <svg width="150px" height="150px" viewBox="0 0 600 600">
+      <svg width="75px" height="75px" viewBox="0 0 600 600">
         <defs>
           <filter id="glow" y="-50%" height="180%">
             <feGaussianBlur stdDeviation="3" result="coloredBlur"/>

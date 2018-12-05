@@ -36,14 +36,12 @@ export default class extends Component {
   renderItem = (item) => {
     return (
       <Col key={item.name} xs={12} md={4}>
-        <Card className="v-gutter">
+        <Card className="v-gutter card card-dark">
           <CardImg top width="100%" src={item.image} alt={item.name}/>
-          <CardBody>
-            <CardText>{item.description}</CardText>
-            <CardTitle>{item.name}</CardTitle>
-            <CardText className="card-vendor">by {item.vendor}</CardText>
-            <CardSubtitle>{item.price}</CardSubtitle>
-          </CardBody>
+          <CardText>{item.description}</CardText>
+          <CardTitle>{item.name}</CardTitle>
+          <CardText className="card-vendor">by {item.vendor}</CardText>
+          <CardSubtitle>{item.price}</CardSubtitle>
         </Card>
       </Col>
     );

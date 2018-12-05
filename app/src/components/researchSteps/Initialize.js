@@ -178,7 +178,7 @@ export default class Initialize extends React.Component {
                     <Col xs={3}>
                       <label>Matching available genomes</label>
                     </Col>
-                    <Col xs={8}>{listings && listings.length}</Col>
+                    <Col xs={8} style={{fontSize: 34}}>{listings && listings.length}</Col>
                   </Row>
                 </FormGroup>
                 <FormGroup>
@@ -187,7 +187,7 @@ export default class Initialize extends React.Component {
                       <label>Number of required genomes</label>
                     </Col>
                     <Col xs={6}>
-                      <Slider max={1000} onChange={this.handleRequiredChange} trackStyle={{ backgroundColor: '#ff007e' }} railStyle={{ backgroundColor: '#ccc' }} handleStyle={{ backgroundColor: '#ff007e', borderColor: '#ff007e' }} />
+                      <Slider defaultValue={1000} max={5000} onChange={this.handleRequiredChange} trackStyle={{ backgroundColor: '#ff007e' }} railStyle={{ backgroundColor: '#ccc' }} handleStyle={{ backgroundColor: '#ff007e', borderColor: '#ff007e' }} />
                     </Col>
                     <Col xs={2}>
                       <input type="text" className="form-control" value={data.required || ''} />
@@ -199,10 +199,10 @@ export default class Initialize extends React.Component {
                     <Col xs={3}>
                       <label>Desired license % per GEM</label>
                     </Col>
-                    <Col xs={5}>
+                    <Col xs={6}>
                       <Slider max={100} defaultValue={25} trackStyle={{ backgroundColor: '#ff007e' }} railStyle={{ backgroundColor: '#ccc' }} handleStyle={{ backgroundColor: '#ff007e', borderColor: '#ff007e' }} />
                     </Col>
-                    <Col xs={3}>
+                    <Col xs={2}>
                       <Diamond />
                     </Col>
                   </Row>

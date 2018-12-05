@@ -12,6 +12,10 @@
   }
 
   .question {
+    .row {
+      margin-bottom: 0;
+    }
+
     .card-body {
       padding: 0;
     }
@@ -20,16 +24,22 @@
       width: 1.5rem;
       display: inline-block;
       vertical-align: middle;
+
+      input {
+        cursor: pointer;
+      }
     }
 
     .answer-label {
       width: calc(100% - 1.5rem);
       display: inline-block;
       vertical-align: middle;
-      padding-left: 1rem;
+      padding-left: 10px;
 
       label {
         margin-bottom: 0;
+        cursor: pointer;
+        font-size: 16px;
       }
     }
   }

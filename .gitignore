@@ -8,7 +8,7 @@ node_modules/
 frontend/build
 
 #blockchain data
-**/data/*
+/eosio_docker/**/data/*
 
 # misc
 .DS_Store

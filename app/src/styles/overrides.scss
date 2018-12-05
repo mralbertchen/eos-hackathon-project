@@ -173,7 +173,6 @@ table tr {
 
         .card{
             @include dark-box;
-            @include default-typog;
             @include box-shadow;
 
             .card-body{
@@ -282,7 +281,6 @@ table tr {
     }
 
     .card-vendor {
-      color: $darkgray;
       margin-bottom: $card-spacer-y;
     }
   }
@@ -517,6 +515,12 @@ $aos-distance: 10px !default;
 
   }
 
+.page-marketplace h1{
+  @include heading;
+  margin-bottom:20px;
+  color: $teal;
+}
+
   .page-my-insights .container-fluid section:before{
     background:$pink;
   }
@@ -559,7 +563,6 @@ $aos-distance: 10px !default;
     }
   }
 
-
   .modal-dialog{
 
     .btn-primary{
@@ -574,6 +577,7 @@ $aos-distance: 10px !default;
           transform: translate(-3px, -3px);
         }
     }
+
     .btn-secondary{
       background:transparent;
       border:2px solid $yellow;
@@ -612,8 +616,6 @@ $aos-distance: 10px !default;
       font-family: 'Gotham';
       text-transform: uppercase;
       font-size:$normal-text;
-
-
     }
   }
   }
