@@ -187,7 +187,7 @@ export default class Initialize extends React.Component {
                       <label>Number of required genomes</label>
                     </Col>
                     <Col xs={6}>
-                      <Slider max={1000} onChange={this.handleRequiredChange} />
+                      <Slider max={1000} onChange={this.handleRequiredChange} trackStyle={{ backgroundColor: '#ff007e' }} railStyle={{ backgroundColor: '#ccc' }} handleStyle={{ backgroundColor: '#ff007e', borderColor: '#ff007e' }} />
                     </Col>
                     <Col xs={2}>
                       <input type="text" className="form-control" value={data.required || ''} />
@@ -200,7 +200,7 @@ export default class Initialize extends React.Component {
                       <label>Desired license % per GEM</label>
                     </Col>
                     <Col xs={5}>
-                      <Slider max={100} defaultValue={25} />
+                      <Slider max={100} defaultValue={25} trackStyle={{ backgroundColor: '#ff007e' }} railStyle={{ backgroundColor: '#ccc' }} handleStyle={{ backgroundColor: '#ff007e', borderColor: '#ff007e' }} />
                     </Col>
                     <Col xs={3}>
                       <Diamond />

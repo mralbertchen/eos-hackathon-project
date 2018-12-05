@@ -3,7 +3,7 @@ import React, { Component } from 'react';
 export default class Diamond extends Component {
   render() {
     return (
-      <svg className="mainSVG" width="150px" height="150px" viewBox="0 0 600 600">
+      <svg width="150px" height="150px" viewBox="0 0 600 600">
         <defs>
           <filter id="glow" y="-50%" height="180%">
             <feGaussianBlur stdDeviation="3" result="coloredBlur"/>
@@ -38,15 +38,14 @@ export default class Diamond extends Component {
         </defs>
 
         <g className="wholeDiamondGroup">
-          <g className="revGroup" opacity="0.05" stroke="#2ffcce" stroke-linecap="round" stroke-width="6" fill="none">
+          <g className="revGroup" opacity="0.05" stroke="#ff007e" stroke-linecap="round" stroke-width="6" fill="none">
             <polyline id="lineMoveLRev0" points="202,165.5 140,244.5 300,435 "/>
             <polyline id="lineMoveLRev1" points="202,165.5 140,244.5 300,435 "/>
             <polyline id="lineMoveRRev0" stroke-miterlimit="10" points="299,166 299,244.9 299,435"/>
             <polyline id="lineMoveRRev1" stroke-miterlimit="10" points="299,166 299,244.9 299,435"/>
           </g>
-          <g className="neonGroup" filter="url(#neon)">
-            <g className="frontGroup" stroke="#2ffcce" stroke-linecap="round" stroke-width="6" fill="none"
-               filter="url(#drop)">
+          <g className="neonGroup">
+            <g className="frontGroup" stroke="#ff007e" stroke-linecap="round" stroke-width="6" fill="none">
               <line id="facetTop" stroke-miterlimit="10" x1="202" y1="165" x2="398" y2="165"/>
               <polyline id="facetM" stroke="none" stroke-miterlimit="10" points="299,166 299,244.9 299,435"/>
               <polyline id="facetR" points="300,435 460,244.5 398,165.5 "/>
