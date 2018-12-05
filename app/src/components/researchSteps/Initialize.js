@@ -3,18 +3,22 @@ import {
   Row,
   Col,
   FormGroup,
-  Input,
   Button,
   Container,
   Card
 } from 'reactstrap';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import Slider, { Range } from 'rc-slider';
+import Slider, { createSliderWithTooltip } from 'rc-slider';
 
 import { getListings, requestData } from '../../actions/research';
 import { iconCheckCircle } from '../../utils/fontawesome';
 import ResearchConfirmation from '../ResearchConfirmation';
 import Diamond from '../Diamond';
+
+const SEQUENCE_COST = 1000;
+const ACCESS_COST = 100;
+
+const TooltipSlider = createSliderWithTooltip(Slider);
 
 export default class Initialize extends React.Component {
   state = {
@@ -47,15 +51,40 @@ export default class Initialize extends React.Component {
       });
   }
 
-  calculateTotalcost(listings) {
-    let totalCost = 0;
-    if (listings) {
-      totalCost = listings.reduce((cost, user) => {
-        const rate = parseFloat(user.rate);
-        return cost + (isNaN(rate) ? 0 : rate);
-      }, 0);
+  /**
+   * +$100 per existing genome
+   * +$1000 per sequence * stake * new genomes
+   * +$100 * (1 - stake) * new genomes
+   * @param listings
+   * @returns {{
+      existingCost: number,
+      newCost: number,
+      newAccessCost: number,
+      totalCost: number,
+    }}
+   */
+  calculateTotalCost(listings) {
+    const { data } = this.props;
+    const { required, split } = data;
+
+    const result = {
+      existingCost: 0,
+      newCost: 0,
+      newAccessCost: 0,
+      totalCost: 0,
+    };
+
+    if (listings && required) {
+      const existingGenomes = Math.min(listings.length, required);
+      const newGenomes = required - existingGenomes;
+
+      result.existingCost = existingGenomes * ACCESS_COST;
+      result.newCost = SEQUENCE_COST * split * newGenomes;
+      result.newAccessCost = ACCESS_COST * (1 - split) * newGenomes;
+
+      result.totalCost = result.existingCost + result.newCost + result.newAccessCost;
     }
-    return totalCost;
+    return result;
   }
 
   handleRequestClick = () => {
@@ -79,8 +108,8 @@ export default class Initialize extends React.Component {
     this.emitChange('required', required);
   };
 
-  handleSplitChange = (range) => {
-    this.emitChange('split', [...range]);
+  handleSplitChange = (split) => {
+    this.emitChange('split', split / 100);
   };
 
   emitChange(name, value) {
@@ -138,7 +167,7 @@ export default class Initialize extends React.Component {
     const { data } = this.props;
 
     const totalCount = listings.length;
-    const totalCost = this.calculateTotalcost(listings);
+    const { totalCost } = this.calculateTotalCost(listings);
 
     const finalData = {
       ...data,
@@ -158,11 +187,56 @@ export default class Initialize extends React.Component {
     );
   }
 
+  renderCost(label, value) {
+    return (
+      <FormGroup>
+        <Row>
+          <Col xs={3}>
+            <label>{label}</label>
+          </Col>
+          <Col xs={6}>
+            {this.renderSummaryValue(value)}
+          </Col>
+          <Col xs={3} className="summary-currency">CarbonUSD</Col>
+        </Row>
+      </FormGroup>
+    );
+  }
+
+  renderTotal(label, value) {
+    return (
+      <FormGroup>
+        <Row>
+          <Col xs={3} className="summary-label">{label}</Col>
+          <Col xs={6}>
+            {this.renderSummaryValue(value, true)}
+          </Col>
+          <Col xs={3} className="summary-currency">CarbonUSD</Col>
+        </Row>
+      </FormGroup>
+    );
+  }
+
+  renderSummaryValue(value, isTotal) {
+    return (
+      <div className={isTotal ? 'summary-value-total' : 'summary-value'}>
+        <img className="eos-summary-logo" src="/static/carbon-pink.svg" height="40" />
+        {typeof value !== 'number' ? 'calculating...' : value.toLocaleString()}
+      </div>
+    );
+  }
+
   render() {
     const { listings, done } = this.state;
-    const { data } = this.props;
+    const { data = {} } = this.props;
 
-    const totalCost = this.calculateTotalcost(listings);
+    const {
+      existingCost,
+      newCost,
+      newAccessCost,
+      totalCost,
+    } = this.calculateTotalCost(listings);
+    const { required, split } = data;
 
     if (done) {
       return this.renderConfirmation();
@@ -187,10 +261,23 @@ export default class Initialize extends React.Component {
                       <label>Number of required genomes</label>
                     </Col>
                     <Col xs={6}>
-                      <Slider max={1000} onChange={this.handleRequiredChange} trackStyle={{ backgroundColor: '#ff007e' }} railStyle={{ backgroundColor: '#ccc' }} handleStyle={{ backgroundColor: '#ff007e', borderColor: '#ff007e' }} />
+                      <Slider
+                        value={required}
+                        min={1}
+                        max={1000}
+                        onChange={this.handleRequiredChange}
+                        trackStyle={{ backgroundColor: '#ff007e' }}
+                        railStyle={{ backgroundColor: '#ccc' }}
+                        handleStyle={{ backgroundColor: '#ff007e', borderColor: '#ff007e' }}
+                      />
                     </Col>
                     <Col xs={2}>
-                      <input type="text" className="form-control" value={data.required || ''} />
+                      <input
+                        type="text"
+                        className="form-control"
+                        value={data.required || ''}
+                        onChange={event => this.handleRequiredChange(parseInt(event.target.value, 10))}
+                      />
                     </Col>
                   </Row>
                 </FormGroup>
@@ -200,21 +287,31 @@ export default class Initialize extends React.Component {
                       <label>Desired license % per GEM</label>
                     </Col>
                     <Col xs={5}>
-                      <Slider max={100} defaultValue={25} trackStyle={{ backgroundColor: '#ff007e' }} railStyle={{ backgroundColor: '#ccc' }} handleStyle={{ backgroundColor: '#ff007e', borderColor: '#ff007e' }} />
+                      <TooltipSlider
+                        value={split * 100}
+                        min={0}
+                        max={90}
+                        onChange={this.handleSplitChange}
+                        trackStyle={{ backgroundColor: '#ff007e' }}
+                        railStyle={{ backgroundColor: '#ccc' }}
+                        handleStyle={{ backgroundColor: '#ff007e', borderColor: '#ff007e' }}
+                        marks={{
+                          25: '25%',
+                          50: '50%',
+                          75: '75%',
+                        }}
+                        tipFormatter={val => `${val}%`}
+                      />
                     </Col>
                     <Col xs={3}>
                       <Diamond />
                     </Col>
                   </Row>
                 </FormGroup>
-                <FormGroup>
-                  <div className="summary-label">Total</div>
-                  <span className="summary-value">
-                    <img className="eos-summary-logo" src="/static/carbon-pink.svg" height="40" />
-                    {totalCost === null ? 'calculating...' : totalCost.toFixed(0)}
-                  </span>
-                  <span>CarbonUSD</span>
-                </FormGroup>
+                {this.renderCost('Usage of existing genomes', existingCost)}
+                {this.renderCost('Sequencing cost', newCost)}
+                {this.renderCost('Usage of new genomes', newAccessCost)}
+                {this.renderTotal('Total', totalCost)}
                 <Row>
                   <Col>
                     <Button className="submit-button" onClick={this.handleRequestClick}>
