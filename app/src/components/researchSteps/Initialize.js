@@ -168,61 +168,64 @@ export default class Initialize extends React.Component {
       return this.renderConfirmation();
     }
 
-    return (
-      <Container>
+    return <Container>
         <Row className="justify-content-center">
           <Col lg="8">
             <Card>
-            <div className="research-step-initialize">
-              <FormGroup>
+              <div className="research-step-initialize">
+                <FormGroup>
+                  <Row>
+                    <Col xs={3}>
+                      <label>Matching available genomes</label>
+                    </Col>
+                    <Col xs={8}>{listings && listings.length}</Col>
+                  </Row>
+                </FormGroup>
+                <FormGroup>
+                  <Row className="d-flex align-items-center">
+                    <Col xs={3}>
+                      <label>Number of required genomes</label>
+                    </Col>
+                    <Col xs={6}>
+                      <Slider max={1000} onChange={this.handleRequiredChange} />
+                    </Col>
+                    <Col xs={2}>
+                      <input type="text" className="form-control" value={data.required || ''} />
+                    </Col>
+                  </Row>
+                </FormGroup>
+                <FormGroup>
+                  <Row className="d-flex align-items-center">
+                    <Col xs={3}>
+                      <label>Desired license % per GEM</label>
+                    </Col>
+                    <Col xs={5}>
+                      <Slider max={100} defaultValue={25} />
+                    </Col>
+                    <Col xs={3}>
+                      <Diamond />
+                    </Col>
+                  </Row>
+                </FormGroup>
+                <FormGroup>
+                  <div className="summary-label">Total</div>
+                  <span className="summary-value">
+                    <img className="eos-summary-logo" src="/static/carbon-pink.svg" height="40" />
+                    {totalCost === null ? 'calculating...' : totalCost.toFixed(0)}
+                  </span>
+                  <span>CarbonUSD</span>
+                </FormGroup>
                 <Row>
-                  <Col xs={3}><label>Number of available genomes</label></Col>
-                  <Col xs={8}>{listings && listings.length}</Col>
-                </Row>
-                <Row>
-                  <Col xs={3}><label>Number of required genomes</label></Col>
-                  <Col xs={6}>
-                    <Slider max={1000} onChange={this.handleRequiredChange} />
-                  </Col>
-                  <Col xs={2}>
-                    <input type="text" className="form-control" value={data.required || ''} />
+                  <Col>
+                    <Button className="submit-button" onClick={this.handleRequestClick}>
+                      Pay and start project <FontAwesomeIcon icon={iconCheckCircle} />
+                    </Button>
                   </Col>
                 </Row>
-                <Row>
-                  <Col xs={3}><label>G.E.M split</label></Col>
-                  <Col xs={5}>
-                    <Range
-                      max={100}
-                      allowCross={false}
-                      defaultValue={[10, 70]}
-                      value={data.split}
-                      onChange={this.handleSplitChange}
-                    />
-                  </Col>
-                  <Col xs={3}><Diamond/></Col>
-                </Row>
-              </FormGroup>
-              <FormGroup>
-                <div className="summary-label">Total</div>
-                <div className="summary-value">
-                <img className="eos-summary-logo" src="/static/eos-pink.svg" height="40" />
-
-                  {totalCost === null ? 'calculating...' : totalCost.toFixed(2)}
-                </div>
-                <div className="summary-currency">CarbonUSD</div>
-              </FormGroup>
-              <Row>
-                <Col>
-                  <Button className="submit-button" onClick={this.handleRequestClick}>
-                    Pay and receive data <FontAwesomeIcon icon={iconCheckCircle} />
-                  </Button>
-                </Col>
-              </Row>
-            </div>
-          </Card>
+              </div>
+            </Card>
           </Col>
         </Row>
-      </Container>
-    );
+      </Container>;
   }
 }
