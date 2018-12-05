@@ -12,7 +12,15 @@ import { getListingById, toListings } from './accounts';
    projectName: 'cancer',
    duration: 3 }
  */
-const transactions = [];
+const transactions = [{
+  offerId: 0,
+  tokenId: 0,
+  from: 'jens',
+  to: 'jens',
+  price: '200000.0000 EOS',
+  projectName: 'Cancer',
+}
+];
 const offers = [];
 
 export function getMockTransactions(name) {

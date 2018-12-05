@@ -27,7 +27,7 @@ export default class extends Component {
       <LayoutMain>
         <Meta title="My Data" />
 
-        <Container>
+        <Container className="my-data-page">
           <DataPanelList data={data} />
         </Container>
       </LayoutMain>

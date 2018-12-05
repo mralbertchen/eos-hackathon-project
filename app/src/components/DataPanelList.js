@@ -1,13 +1,12 @@
 import React from 'react';
-import { Nav, NavItem, NavLink } from 'reactstrap';
+import { Nav, NavItem, NavLink, Row, Col } from 'reactstrap';
 import PropTypes from 'prop-types';
 
-import GenomeSection from './GenomeSection';
 import ActivitySection from './ActivitySection';
 import HeartRateSection from './HeartRateSection';
 import SleepSection from './SleepSection';
-import Chromosomes from './Chromosomes';
 import ChromosomeSection from './ChromosomeSection';
+import QuestionPanel from './QuestionPanel';
 
 export default class DataPanelList extends React.PureComponent {
   static propTypes = {
@@ -41,20 +40,25 @@ export default class DataPanelList extends React.PureComponent {
     }
 
     return (
-      <div>
-        <Nav>
-          {data.data.map(item => (
-            <NavItem key={item.id}>
-              <NavLink href={`#${item.slug}`}>{item.name}</NavLink>
-            </NavItem>
-          ))}
-        </Nav>
-        <ChromosomeSection />
-        {/*<GenomeSection />*/}
-        <ActivitySection />
-        <HeartRateSection />
-        <SleepSection />
-      </div>
+      <Row>
+        <Col xs={12}>
+          <Nav>
+            {data.data.map(item => (
+              <NavItem key={item.id}>
+                <NavLink href={`#${item.slug}`}>{item.name}</NavLink>
+              </NavItem>
+            ))}
+          </Nav>
+          <ChromosomeSection />
+          {/*<GenomeSection />*/}
+          <ActivitySection />
+          <HeartRateSection />
+          <SleepSection />
+        </Col>
+        {/*<Col xs={3}>*/}
+          {/*<QuestionPanel />*/}
+        {/*</Col>*/}
+      </Row>
     );
   }
 }

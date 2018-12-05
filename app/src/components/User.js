@@ -57,6 +57,7 @@ export default class User extends React.Component {
   handleSelectUser(user) {
     userStore.setUser(user);
     loginUser(user);
+    TransactionStore.updateEarnings();
 
     getOffers(user).then(response => {
       if (!this.mounted) return;
