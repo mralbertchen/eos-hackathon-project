@@ -261,9 +261,6 @@ export default class Initialize extends React.Component {
                       <label>Number of required genomes</label>
                     </Col>
                     <Col xs={6}>
-<<<<<<< HEAD
-                      <Slider defaultValue={1000} max={5000} onChange={this.handleRequiredChange} trackStyle={{ backgroundColor: '#ff007e' }} railStyle={{ backgroundColor: '#ccc' }} handleStyle={{ backgroundColor: '#ff007e', borderColor: '#ff007e' }} />
-=======
                       <Slider
                         value={required}
                         min={1}
@@ -273,7 +270,6 @@ export default class Initialize extends React.Component {
                         railStyle={{ backgroundColor: '#ccc' }}
                         handleStyle={{ backgroundColor: '#ff007e', borderColor: '#ff007e' }}
                       />
->>>>>>> adb499755d56c605c5b71fe71a1efaf2fc511d43
                     </Col>
                     <Col xs={2}>
                       <input
@@ -290,10 +286,6 @@ export default class Initialize extends React.Component {
                     <Col xs={3}>
                       <label>Desired license % per GEM</label>
                     </Col>
-<<<<<<< HEAD
-                    <Col xs={6}>
-                      <Slider max={100} defaultValue={25} trackStyle={{ backgroundColor: '#ff007e' }} railStyle={{ backgroundColor: '#ccc' }} handleStyle={{ backgroundColor: '#ff007e', borderColor: '#ff007e' }} />
-=======
                     <Col xs={5}>
                       <TooltipSlider
                         value={split * 100}
@@ -310,7 +302,6 @@ export default class Initialize extends React.Component {
                         }}
                         tipFormatter={val => `${val}%`}
                       />
->>>>>>> adb499755d56c605c5b71fe71a1efaf2fc511d43
                     </Col>
                     <Col xs={2}>
                       <Diamond />
