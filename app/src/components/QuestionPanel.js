@@ -4,6 +4,8 @@ import { CSSTransition } from 'react-transition-group';
 import Question from './Question';
 import questions from '../server/api/data/questions';
 
+const RANDOMIZE = false;
+
 export default class QuestionPanel extends Component {
   state = {
     show: false,
@@ -22,10 +24,15 @@ export default class QuestionPanel extends Component {
     let max = 20;
 
     let index;
-    do {
-      index = Math.min(questions.length - 1, Math.floor(Math.random() * questions.length));
-      max--;
-    } while (this.state.history.includes(index) && max > 0);
+    if (RANDOMIZE) {
+      do {
+        index = Math.min(questions.length - 1, Math.floor(Math.random() * questions.length));
+        max--;
+      } while (this.state.history.includes(index) && max > 0);
+    } else {
+      const cur = this.state.history.length === 0 ? -1 : this.state.history[this.state.history.length - 1];
+      index = cur + 1;
+    }
 
     // didn't find a new question
     if (max <= 0) return;

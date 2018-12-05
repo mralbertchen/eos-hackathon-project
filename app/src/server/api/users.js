@@ -1,5 +1,6 @@
 import { Router } from 'express';
 import config from 'config';
+import { find } from 'lodash';
 
 import { SESSION_COOKIE_NAME } from '../../constants/session';
 
@@ -18,7 +19,7 @@ router.post('/login', async (req, res) => {
   console.log('Login', name);
 
   try {
-    const cookieValue = JSON.stringify({ name });
+    const cookieValue = JSON.stringify(find(users, user => user.name === name));
     res.cookie(SESSION_COOKIE_NAME, cookieValue, {
       httpOnly: true,
       secure: req.secure,

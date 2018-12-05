@@ -17,10 +17,10 @@ export default class extends Component {
     audience: null,
     form: {
       researchName: 'Alzheimer\'s Disease',
-      ethnicity: 'European',
+      ethnicity: 'East Asian',
       location: '',
       required: 1000,
-      split: [10, 70],
+      split: 0.25,
       ageRange: [30, 110],
       weightRange: [1, 300],
       sleepRange: [0, 10],

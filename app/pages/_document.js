@@ -25,6 +25,7 @@ export default class MyDocument extends Document {
     return (
       <html>
         <Head>
+          <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet"/>
         </Head>
 
         <body className={`page-${routeName}`}>

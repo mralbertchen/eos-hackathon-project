@@ -46,6 +46,7 @@ export default class Earnings extends React.Component {
               end={earnings}
               className="text-white"
               duration={2}
+              formattingFn={val => val.toLocaleString()}
             />
             <span className="currency">cUSD</span>
           </div>

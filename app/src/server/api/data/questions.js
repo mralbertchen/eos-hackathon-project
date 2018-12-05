@@ -1,11 +1,23 @@
 export default [
   {
-    title: 'How many times have you had a urinary tract infection (UTI)? (Please only count UTIs that were diagnosed by a urine test and treated with antibiotics.)',
-    answers: ['Never', 'Once', 'Twice', 'Three times', 'Four or more times', 'I\'m not sure'],
+    title: 'Have you ever taken warfarin (Marevan)?',
+    answers: ['Yes', 'No', 'I\'m not sure'],
+  },
+  {
+    title: 'Have you ever received chemotherapy?',
+    answers: ['Yes', 'No', 'I\'m not sure'],
+  },
+  {
+    title: 'Have you ever been diagnosed with Lou Gehrig\'s disease (ALS)?',
+    answers: ['Yes', 'No', 'I\'m not sure'],
   },
   {
     title: 'Did your mother smoke while she was pregnant with you?',
     answers: ['Yes, regularly', 'Yes, occasionally', 'Yes, but I am not sure how frequently', 'No', 'I\'m not sure'],
+  },
+  {
+    title: 'How many times have you had a urinary tract infection (UTI)? (Please only count UTIs that were diagnosed by a urine test and treated with antibiotics.)',
+    answers: ['Never', 'Once', 'Twice', 'Three times', 'Four or more times', 'I\'m not sure'],
   },
   {
     title: 'Do you cry easily?',
@@ -225,10 +237,6 @@ export default [
     answers: ['Yes', 'No', 'I\'m not sure'],
   },
   {
-    title: 'Have you ever been diagnosed with Lou Gehrig\'s disease (ALS)?',
-    answers: ['Yes', 'No', 'I\'m not sure'],
-  },
-  {
     title: 'Were you adopted?',
     answers: ['Yes', 'No', 'I\'d rather not say'],
   },
@@ -250,10 +258,6 @@ export default [
   },
   {
     title: 'Has a doctor ever told you that you had abnormally low testosterone?',
-    answers: ['Yes', 'No', 'I\'m not sure'],
-  },
-  {
-    title: 'Have you ever received chemotherapy?',
     answers: ['Yes', 'No', 'I\'m not sure'],
   },
   {
@@ -345,8 +349,4 @@ export default [
     title: 'How many times have you been hospitalised in the past 12 months?',
     answers: ['0', '1', '2', '3 or more'],
   },
-  {
-    title: 'Have you ever taken warfarin (Marevan)?',
-    answers: ['Yes', 'No', 'I\'m not sure'],
-  }
 ];

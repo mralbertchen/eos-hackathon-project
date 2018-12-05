@@ -1,10 +1,13 @@
 .research-wizard {
   .research-step-initialize {
-    .summary-label, .summary-input, .summary-value, .summary-currency {
-      display: inline-block;
-      vertical-align: middle;
-      width: auto;
-      margin-right: 1rem;
+    //.summary-label, .summary-input, .summary-value, .summary-currency {
+    //  display: inline-block;
+    //  vertical-align: middle;
+    //  width: auto;
+    //  margin-right: 1rem;
+    //}
+    .summary-label {
+      padding-top: 1.5rem;
     }
 
     .summary-currency {
@@ -25,13 +28,19 @@
 
     .summary-value {
       color: $pink;
+      font-size: 1.625rem;
+    }
+
+    .summary-value-total {
+      color: $pink;
       font-size: 2.625rem;
     }
 
     .summary-currency {
       color: $black;
       @include dim;
-      font-size: 2.625rem;
+      //font-size: 2.625rem;
+      padding-top: 1.5rem;
     }
   }
 }

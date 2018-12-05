@@ -24,6 +24,8 @@ const transactions = [{
 const offers = [];
 
 export function getMockTransactions(name) {
+  if (!name) return transactions;
+
   return transactions.filter(transaction => transaction.to === name);
 }
 

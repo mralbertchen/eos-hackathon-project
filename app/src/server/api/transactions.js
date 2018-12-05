@@ -37,4 +37,25 @@ router.get('/:name', async (req, res) => {
   }
 });
 
+router.get('/', async (req, res) => {
+  console.log('Get all transactions');
+
+  try {
+    let data;
+    if (isMocked) {
+      data = getMockTransactions();
+    } else {
+      data = await getTxs();
+    }
+
+    res.json({
+      data,
+    });
+  } catch(err) {
+    res.status(500).json({
+      error: err.message,
+    });
+  }
+});
+
 export default router;
