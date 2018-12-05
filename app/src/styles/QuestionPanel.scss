@@ -12,6 +12,10 @@
   }
 
   .question {
+    .row {
+      margin-bottom: 0;
+    }
+
     .card-body {
       padding: 0;
     }
@@ -20,6 +24,10 @@
       width: 1.5rem;
       display: inline-block;
       vertical-align: middle;
+
+      input {
+        cursor: pointer;
+      }
     }
 
     .answer-label {
@@ -30,6 +38,7 @@
 
       label {
         margin-bottom: 0;
+        cursor: pointer;
       }
     }
   }

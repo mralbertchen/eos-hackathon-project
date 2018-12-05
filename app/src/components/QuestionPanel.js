@@ -1,10 +1,13 @@
 import React, { Component } from 'react';
+import { CSSTransition } from 'react-transition-group';
 
 import Question from './Question';
 import questions from '../server/api/data/questions';
 
 export default class QuestionPanel extends Component {
   state = {
+    show: false,
+    question: null,
     history: [],
   };
 
@@ -15,7 +18,7 @@ export default class QuestionPanel extends Component {
   /**
    * pick a random question
    */
-  selectQuestion() {
+  selectQuestion = () => {
     let max = 20;
 
     let index;
@@ -28,22 +31,41 @@ export default class QuestionPanel extends Component {
     if (max <= 0) return;
 
     this.setState(state => ({
+      show: true,
       question: questions[index],
       history: [...state.history, index],
     }));
-  }
+  };
 
   handleAnswer = () => {
-    this.selectQuestion();
+    this.setState({ show: false });
+  };
+
+  handleSkip = () => {
+    this.setState({ show: false });
   };
 
   render() {
-    const { question } = this.state;
+    const { show, question } = this.state;
 
     return (
       <div className="question-panel">
         <h1>Research</h1>
-        <Question data={question} onChange={this.handleAnswer} />
+        <CSSTransition
+          key={question}
+          in={show}
+          timeout={300}
+          classNames="react-fade"
+          unmountOnExit
+          onExited={this.selectQuestion}
+        >
+          <Question
+            className="react-fade"
+            data={question}
+            onChange={this.handleAnswer}
+            onSkip={this.handleSkip}
+          />
+        </CSSTransition>
       </div>
     );
   }

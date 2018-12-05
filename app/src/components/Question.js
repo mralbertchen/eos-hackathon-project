@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { Row, Col, Card, CardBody, CardTitle, CardFooter } from 'reactstrap';
 import { noop } from 'lodash';
+import cx from 'classnames';
 
 export default class Question extends Component {
   static defaultProps = {
@@ -12,9 +13,16 @@ export default class Question extends Component {
     onChange(question, answer);
   }
 
+  handleSkip = () => {
+    const { onSkip } = this.props;
+    onSkip();
+  };
+
   renderAnswer = (answer) => {
+    const key = `${answer}_${(Math.random() * 1000).toFixed(0)}`;
+
     return (
-      <Row>
+      <Row key={key}>
         <Col>
           <div className="answer-radio">
             <input
@@ -26,7 +34,7 @@ export default class Question extends Component {
             />
           </div>
           <div className="answer-label">
-            <label for={`answer_${answer}`}>{answer}</label>
+            <label htmlFor={`answer_${answer}`}>{answer}</label>
           </div>
         </Col>
       </Row>
@@ -34,17 +42,20 @@ export default class Question extends Component {
   };
 
   render() {
-    const { title, answers } = this.props.data;
+    const { className, data } = this.props;
+    const { title, answers } = data;
+
+    const classes = cx('question', className);
 
     return (
-      <div className="question">
+      <div className={classes}>
         <Card data-aos="fade-up" data-aos-delay="300" className="card-dark">
           <CardTitle>{title}</CardTitle>
           <CardBody>
             {answers.map(this.renderAnswer)}
           </CardBody>
-          <CardFooter>
-            <a>skip question</a>
+          <CardFooter className="text-right">
+            <a className="btn" onClick={this.handleSkip}>skip question &gt;</a>
           </CardFooter>
         </Card>
       </div>

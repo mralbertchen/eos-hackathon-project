@@ -1,0 +1,12 @@
+.react-fade {
+  opacity: 1;
+  transition: opacity 300ms;
+
+  &-enter-active, &-enter-done {
+    opacity: 1;
+  }
+
+  &-exit-active, &-exit-done {
+    opacity: 0;
+  }
+}

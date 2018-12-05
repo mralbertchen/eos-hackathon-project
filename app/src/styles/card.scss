@@ -3,39 +3,44 @@
   @include default-typog;
   @include box-shadow;
 
-  .card-body{
-    span{
-      line-height:25px;
+  background-color: transparent;
+
+  .card-body {
+    span {
+      line-height: 25px;
     }
   }
 
-  .pie-legend{
-    margin-left:30px;
+  .card-footer {
+    border: 0;
   }
 
-  h4{
+  .pie-legend {
+    margin-left: 30px;
+  }
+
+  h4 {
     @include card-heading;
-    display:inline-block;
+    display: inline-block;
   }
 
-  .card-header{
+  .card-header {
     @include card-heading;
-    padding:0;
-    border:0;
+    padding: 0;
+    border: 0;
   }
 
-  hr{
-    background:$white;
+  hr {
+    background: $white;
     margin: 20px 0 20px 0;
     @include dim
 
   }
 
-  .activity-center{
+  .activity-center {
     width: 210px;
     margin: 0 auto;
   }
-
 
 
   h4 {
