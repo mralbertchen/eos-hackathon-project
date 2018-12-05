@@ -12,6 +12,25 @@
   }
 
   .question {
+    .card-body {
+      padding: 0;
+    }
 
+    .answer-radio {
+      width: 1.5rem;
+      display: inline-block;
+      vertical-align: middle;
+    }
+
+    .answer-label {
+      width: calc(100% - 1.5rem);
+      display: inline-block;
+      vertical-align: middle;
+      padding-left: 1rem;
+
+      label {
+        margin-bottom: 0;
+      }
+    }
   }
 }
