@@ -10,7 +10,7 @@ export default class QuestionPanel extends Component {
     const question = questions[index];
 
     return (
-      <div>
+      <div className="question-panel">
         <h1>Research</h1>
         <Question data={question} />
       </div>

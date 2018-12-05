@@ -1,2 +1,69 @@
-.card {
+.card.card-dark {
+  @include dark-box;
+  @include default-typog;
+  @include box-shadow;
+
+  .card-body{
+    span{
+      line-height:25px;
+    }
+  }
+
+  .pie-legend{
+    margin-left:30px;
+  }
+
+  h4{
+    @include card-heading;
+    display:inline-block;
+  }
+
+  .card-header{
+    @include card-heading;
+    padding:0;
+    border:0;
+  }
+
+  hr{
+    background:$white;
+    margin: 20px 0 20px 0;
+    @include dim
+
+  }
+
+  .activity-center{
+    width: 210px;
+    margin: 0 auto;
+  }
+
+
+
+  h4 {
+    @include card-heading;
+  }
+
+  .card-header {
+    @include card-heading;
+    padding: 0;
+    border: 0;
+  }
+
+  hr {
+    background: $white;
+    margin: 20px 0 20px 0;
+    @include dim;
+  }
+
+  .activity-center {
+    width: 250px;
+    margin: 0 auto;
+  }
+
+  .subtle-text {
+    @include dim;
+  }
+
+  hr {
+    background: rgba(255, 255, 255, 0.1);
+  }
 }

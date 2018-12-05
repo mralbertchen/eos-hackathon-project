@@ -41,7 +41,7 @@ export default class DataPanelList extends React.PureComponent {
 
     return (
       <Row>
-        <Col xs={12}>
+        <Col xs={9}>
           <Nav>
             {data.data.map(item => (
               <NavItem key={item.id}>
@@ -55,9 +55,9 @@ export default class DataPanelList extends React.PureComponent {
           <HeartRateSection />
           <SleepSection />
         </Col>
-        {/*<Col xs={3}>*/}
-          {/*<QuestionPanel />*/}
-        {/*</Col>*/}
+        <Col xs={3}>
+          <QuestionPanel />
+        </Col>
       </Row>
     );
   }
