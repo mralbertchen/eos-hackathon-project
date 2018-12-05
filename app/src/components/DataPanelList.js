@@ -6,6 +6,8 @@ import GenomeSection from './GenomeSection';
 import ActivitySection from './ActivitySection';
 import HeartRateSection from './HeartRateSection';
 import SleepSection from './SleepSection';
+import Chromosomes from './Chromosomes';
+import ChromosomeSection from './ChromosomeSection';
 
 export default class DataPanelList extends React.PureComponent {
   static propTypes = {
@@ -47,7 +49,8 @@ export default class DataPanelList extends React.PureComponent {
             </NavItem>
           ))}
         </Nav>
-        <GenomeSection />
+        <ChromosomeSection />
+        {/*<GenomeSection />*/}
         <ActivitySection />
         <HeartRateSection />
         <SleepSection />

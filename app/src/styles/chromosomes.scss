@@ -1,0 +1,43 @@
+.chromosomes-container .chromosomes {
+  float: left;
+  display: block;
+  margin-right: 1.69492%;
+  width: 83.05085%;
+  margin-left: 8.47458%;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.chromosomes-container .chromosomes {
+  -webkit-box-align: end;
+  -webkit-align-items: flex-end;
+  -ms-flex-align: end;
+  align-items: flex-end;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  height: 100%;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  position: relative;
+}
+
+.chromosomes-container .chromosomes, .chromosomes-container .texts {
+  left: 0!important;
+}
+
+.chromosomes-container .chromosomes-mask {
+  height: 100%;
+  overflow: hidden;
+  position: relative;
+}
