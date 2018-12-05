@@ -9,6 +9,7 @@ import {
   Card
 } from 'reactstrap';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import Slider, { Range } from 'rc-slider';
 
 import { getListings, requestData } from '../../actions/research';
 import { iconCheckCircle } from '../../utils/fontawesome';
@@ -73,6 +74,26 @@ export default class Initialize extends React.Component {
 
   formatDecimal(num, decimals = 1) {
     return typeof num === 'number' ? num.toFixed(decimals) : '';
+  }
+
+  handleRequiredChange = (required) => {
+    this.emitChange('required', required);
+  };
+
+  handleSplitChange = (range) => {
+    const split = [...range, 100];
+    this.emitChange('split', split);
+  };
+
+  emitChange(name, value) {
+    const { onChange, data } = this.props;
+
+    const nextData = {
+      ...data,
+      [name]: value,
+    };
+
+    onChange(nextData);
   }
 
   renderListing = (listing) => {
@@ -141,6 +162,7 @@ export default class Initialize extends React.Component {
 
   render() {
     const { listings, done } = this.state;
+    const { data } = this.props;
 
     const totalCost = this.calculateTotalcost(listings);
 
@@ -150,34 +172,43 @@ export default class Initialize extends React.Component {
 
     return (
       <Container>
-        <Card>
-      <div className="research-step-initialize">
-        <Row>
-          <Col>
-            <h4>Select your dataset</h4>
-          </Col>
-        </Row>
-        <FormGroup>
-          Number of available genomes: {listings && listings.length}
-        </FormGroup>
-        <FormGroup>
-          <div className="summary-label">Total</div>
-          <div className="summary-value">
-          <img className="eos-summary-logo" src="/static/eos-pink.svg" height="40" />
+        <Row className="justify-content-center">
+          <Col lg="8">
+            <Card>
+            <div className="research-step-initialize">
+              <FormGroup>
+                Number of available genomes: {listings && listings.length}
+                <div>
+                  <label>Number of required genomes</label>
+                  <Slider max={1000} onChange={this.handleRequiredChange} />
+                  <input type="text" value={data.required || ''} />
+                </div>
+                <div>
+                  <label>G.E.M split</label>
+                  <Range max={100} allowCross={false} defaultValue={[10, 70]} onChange={this.handleSplitChange} />
+                  {data.split}
+                </div>
+              </FormGroup>
+              <FormGroup>
+                <div className="summary-label">Total</div>
+                <div className="summary-value">
+                <img className="eos-summary-logo" src="/static/eos-pink.svg" height="40" />
 
-            {totalCost === null ? 'calculating...' : totalCost.toFixed(2)}
-          </div>
-          <div className="summary-currency">EOS</div>
-        </FormGroup>
-        <Row>
-          <Col>
-            <Button className="submit-button" onClick={this.handleRequestClick}>
-              Pay and receive data <FontAwesomeIcon icon={iconCheckCircle} />
-            </Button>
+                  {totalCost === null ? 'calculating...' : totalCost.toFixed(2)}
+                </div>
+                <div className="summary-currency">EOS</div>
+              </FormGroup>
+              <Row>
+                <Col>
+                  <Button className="submit-button" onClick={this.handleRequestClick}>
+                    Pay and receive data <FontAwesomeIcon icon={iconCheckCircle} />
+                  </Button>
+                </Col>
+              </Row>
+            </div>
+          </Card>
           </Col>
         </Row>
-      </div>
-  </Card>
       </Container>
     );
   }

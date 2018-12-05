@@ -42,7 +42,7 @@ export default class extends Component {
       },
       {
         name: <div className="step-head">Step 2<div className="step-sub">Initialize</div></div>,
-        component: <Initialize data={form} />
+        component: <Initialize data={form} onChange={this.handleChange} />
       },
     ];
 

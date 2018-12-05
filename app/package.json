@@ -40,6 +40,7 @@
     "nodemon": "^1.18.4",
     "normalize.css": "^8.0.0",
     "prop-types": "^15.6.2",
+    "rc-slider": "^8.6.3",
     "rc-upload": "^2.6.0",
     "react": "^16.3.0",
     "react-countup": "^4.0.0-alpha.6",

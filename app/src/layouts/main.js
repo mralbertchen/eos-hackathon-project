@@ -33,7 +33,7 @@ export default class extends React.Component {
     } else if (user && user.isInternal) {
       Router.push('/geneos');
     } else {
-      Router.push('/');
+      Router.push('/dashboard');
     }
   }
 
@@ -72,8 +72,8 @@ export default class extends React.Component {
           </Link>
         </NavItem>
         <NavItem>
-          <Link href="/shop">
-            <NavLink href="/shop">Shop</NavLink>
+          <Link href="/marketplace">
+            <NavLink href="/marketplace">Marketplace</NavLink>
           </Link>
         </NavItem>
       </Nav>
