@@ -33,7 +33,8 @@ export default () => (
                     className="text-white"
                     duration={2}
                     decimals={2}
-                  />%
+                  />
+                  %
                 </div>
                 <span className="subtle-text">Increase in steps</span>
               </div>
@@ -74,7 +75,8 @@ export default () => (
                     className="text-white"
                     duration={2}
                     decimals={2}
-                  />%
+                  />
+                  %
                 </div>
                 <span className="subtle-text">Increase in steps</span>
               </div>
@@ -115,21 +117,22 @@ export default () => (
                     className="text-white"
                     duration={2}
                     decimals={2}
-                  />%
+                  />
+                  %
                 </div>
                 <span className="subtle-text">Increase in steps</span>
               </div>
               <div>
-              <div className="card-number">
-                <CountUp
-                  component="span"
-                  delay={5}
-                  end={483}
-                  className="text-white"
-                  duration={2}
-                />
-              </div>
-              <span className="subtle-text">Weekly avg</span>
+                <div className="card-number">
+                  <CountUp
+                    component="span"
+                    delay={5}
+                    end={483}
+                    className="text-white"
+                    duration={2}
+                  />
+                </div>
+                <span className="subtle-text">Weekly avg</span>
               </div>
             </div>
           </Col>
