@@ -46,7 +46,6 @@ export default class ResearchConfirmation extends React.PureComponent {
         </ModalHeader>
         <ModalBody className="purchase-confirmation">
           {this.renderDetailRow('Sample Size', `${request.totalCount} SUBJECTS`)}
-          {this.renderDetailRow('Study Duration', request.duration)}
           {this.renderDetailRow('Dataset', 'Age, Location, Weight')}
           {this.renderDetailRow('Cost', (
             <span>

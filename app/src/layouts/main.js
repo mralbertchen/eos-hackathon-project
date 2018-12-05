@@ -32,6 +32,8 @@ export default class extends React.Component {
       Router.push('/research');
     } else if (user && user.isInternal) {
       Router.push('/geneos');
+    } else if (!user) {
+      Router.push('/');
     } else {
       Router.push('/dashboard');
     }

@@ -16,9 +16,11 @@ export default class extends Component {
   state = {
     audience: null,
     form: {
-      researchName: 'NYU School of Medicine',
-      researchArea: 'Alzheimer\'s Disease ',
-      duration: '3 Months',
+      researchName: 'Alzheimer\'s Disease',
+      ethnicity: 'European',
+      location: '',
+      required: 1000,
+      split: [10, 70],
       ageRange: [30, 110],
       weightRange: [1, 300],
       sleepRange: [0, 10],

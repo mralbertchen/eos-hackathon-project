@@ -1,12 +1,9 @@
 import React from 'react';
 import { Form, Row, Col, Button, Input, Label } from 'reactstrap';
 import { noop } from 'lodash';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 
-import { iconArrowLeft, iconArrowRight, iconEdit } from '../../utils/fontawesome';
 import NavRow from './NavRow';
 import { Card, Container } from 'reactstrap';
-import LayoutMain from '../../layouts/main';
 
 const ETHNICITIES = [
   '',
@@ -38,7 +35,7 @@ export default class ResearchProject extends React.Component {
   isValidated() {
     const { data } = this.props;
 
-    return data.researchArea && data.researchName && data.duration;
+    return data.researchName;
   }
 
   emitChange(name, value) {
@@ -64,53 +61,10 @@ export default class ResearchProject extends React.Component {
 
     return (
       <Row className="row-margin">
-        <Col xs={3}><Label>{label}</Label></Col>
-        <Col xs={6}>
-          <Input name={name} onChange={this.handleChange} value={data[name] || ''} />
-        </Col>
-      </Row>
-    );
-  }
-
-  renderDuration(label, name) {
-    const { data } = this.props;
-
-    const { [name]: duration } = data || {};
-
-    const durations = ['3 Months', '6 Months'];
-
-    return (
-      <Row className="row-margin">
-        <Col xs={3}><Label>{label}</Label></Col>
-        <div className="overflow-buttons">
-          {durations.map(label => (
-            <Button
-              key={label}
-              type="button"
-              onClick={() => this.emitChange(name, label)}
-              color={duration === label ? 'primary' : 'secondary'}
-            >
-              {label}
-            </Button>
-          ))}
-         
-          <Button type="button">
-            Custom
-          </Button>
-        </div>
-      </Row>
-    );
-  }
-
-  renderInput(label, name) {
-    const { data } = this.props;
-
-    return (
-      <Row className="row-margin">
         <Col xs={3}>
           <Label>{label}</Label>
         </Col>
-        <Col xs={6}>
+        <Col xs={8}>
           <Input
             name={name}
             onChange={this.handleChange}
@@ -131,7 +85,7 @@ export default class ResearchProject extends React.Component {
         <Col xs={3}>
           <Label>{label}</Label>
         </Col>
-        <Col xs={3}>
+        <Col xs={4}>
           <Input
             name={name}
             onChange={e => this.emitChange(name, [e.target.value, to])}
@@ -140,7 +94,7 @@ export default class ResearchProject extends React.Component {
           />
         </Col>
         -
-        <Col xs={3}>
+        <Col xs={4}>
           <Input
             name={name}
             onChange={e => this.emitChange(name, [from, e.target.value])}
@@ -186,8 +140,6 @@ export default class ResearchProject extends React.Component {
             <Card>
               <Form>
                 {this.renderInput('Project Name', 'researchName')}
-                {this.renderInput('Project Subject', 'researchArea')}
-                {this.renderDuration('Project Duration', 'duration')}
                 {this.renderSelect('Genetics', 'ethnicity', ETHNICITIES)}
                 {this.renderRange('Age', 'ageRange')}
                 {this.renderSelect('Location', 'location', LOCATIONS)}

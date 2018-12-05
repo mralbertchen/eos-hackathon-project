@@ -14,8 +14,7 @@ import Slider, { Range } from 'rc-slider';
 import { getListings, requestData } from '../../actions/research';
 import { iconCheckCircle } from '../../utils/fontawesome';
 import ResearchConfirmation from '../ResearchConfirmation';
-
-const AUDIENCE_COUNT_DEFAULT = 120;
+import Diamond from '../Diamond';
 
 export default class Initialize extends React.Component {
   state = {
@@ -81,8 +80,7 @@ export default class Initialize extends React.Component {
   };
 
   handleSplitChange = (range) => {
-    const split = [...range, 100];
-    this.emitChange('split', split);
+    this.emitChange('split', [...range]);
   };
 
   emitChange(name, value) {
@@ -177,17 +175,32 @@ export default class Initialize extends React.Component {
             <Card>
             <div className="research-step-initialize">
               <FormGroup>
-                Number of available genomes: {listings && listings.length}
-                <div>
-                  <label>Number of required genomes</label>
-                  <Slider max={1000} onChange={this.handleRequiredChange} />
-                  <input type="text" value={data.required || ''} />
-                </div>
-                <div>
-                  <label>G.E.M split</label>
-                  <Range max={100} allowCross={false} defaultValue={[10, 70]} onChange={this.handleSplitChange} />
-                  {data.split}
-                </div>
+                <Row>
+                  <Col xs={3}><label>Number of available genomes</label></Col>
+                  <Col xs={8}>{listings && listings.length}</Col>
+                </Row>
+                <Row>
+                  <Col xs={3}><label>Number of required genomes</label></Col>
+                  <Col xs={6}>
+                    <Slider max={1000} onChange={this.handleRequiredChange} />
+                  </Col>
+                  <Col xs={2}>
+                    <input type="text" className="form-control" value={data.required || ''} />
+                  </Col>
+                </Row>
+                <Row>
+                  <Col xs={3}><label>G.E.M split</label></Col>
+                  <Col xs={5}>
+                    <Range
+                      max={100}
+                      allowCross={false}
+                      defaultValue={[10, 70]}
+                      value={data.split}
+                      onChange={this.handleSplitChange}
+                    />
+                  </Col>
+                  <Col xs={3}><Diamond/></Col>
+                </Row>
               </FormGroup>
               <FormGroup>
                 <div className="summary-label">Total</div>
@@ -196,7 +209,7 @@ export default class Initialize extends React.Component {
 
                   {totalCost === null ? 'calculating...' : totalCost.toFixed(2)}
                 </div>
-                <div className="summary-currency">EOS</div>
+                <div className="summary-currency">CarbonUSD</div>
               </FormGroup>
               <Row>
                 <Col>
