@@ -42,7 +42,7 @@ export default class QuestionPanel extends Component {
 
     return (
       <div className="question-panel">
-        <h1>Research</h1>
+        <h1>About you</h1>
         <Question data={question} onChange={this.handleAnswer} />
       </div>
     );

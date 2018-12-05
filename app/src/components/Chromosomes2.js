@@ -6,7 +6,7 @@ export default class Chromosomes extends Component {
       <div className="js-chromosomes-container chromosomes-container">
         <div className="chromosomes-mask js-chromosomes-mask">
           <div className="chromosomes js-chromosomes">
-            <figure data-chromosome-id="1" className="js-chromosome chromosome">
+            {/* <figure data-chromosome-id="1" className="js-chromosome chromosome">
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 67.8 400">
                 <path fill="#D41A68"
                       d="M14.8 0C6.6 0 0 6.6 0 14.8V188.6c0 1.1.2 2.2.4 3.1.5 2.6 1.6 4.7 3.3 6.6.5.5.9 1.1 1.5 1.5l-.2.2c-2 1.8-3.5 4-4.2 6.8v.4c-.2.5-.2 1.1-.4 1.6v.5c0 .7-.2 1.3-.2 2v174.2c0 1.3.2 2.6.5 3.7C2.4 395.3 8.2 400 15 400s12.6-4.7 14.2-11.1c.4-1.1.5-2.4.5-3.7V210.6v-1.5c0-.4 0-.5-.2-.9v-.5c0-.4-.2-.7-.4-1.1v-.2c-.7-2.7-2.4-4.9-4.4-6.8l-.2-.2c.5-.5 1.1-.9 1.5-1.5 1.6-1.8 2.7-4 3.3-6.6.2-.9.4-2 .4-3.1V14.8C29.6 6.6 23 0 14.8 0zM52.8 0C44.6 0 38 6.6 38 14.8V188.6c0 1.1.2 2.2.4 3.1.5 2.6 1.6 4.7 3.3 6.6.5.5.9 1.1 1.5 1.5l-.2.2c-2 1.8-3.5 4-4.2 6.8v.4c-.2.5-.2 1.1-.4 1.6v.5c0 .7-.2 1.3-.2 2v174.2c0 1.3.2 2.6.5 3.7 1.6 6.4 7.5 11.1 14.2 11.1s12.6-4.7 14.2-11.1c.4-1.1.5-2.4.5-3.7V210.6v-1.5c0-.4 0-.5-.2-.9v-.5c0-.4-.2-.7-.4-1.1v-.2c-.7-2.7-2.4-4.9-4.4-6.8l-.2-.2c.5-.5 1.1-.9 1.5-1.5 1.6-1.8 2.7-4 3.3-6.6.2-.9.4-2 .4-3.1V14.8C67.6 6.6 60.8 0 52.8 0z"></path>
@@ -464,8 +464,8 @@ export default class Chromosomes extends Component {
               <figcaption className="chromosome-id">
                 9
               </figcaption>
-            </figure>
-            <figure data-chromosome-id="10" className="js-chromosome chromosome">
+            </figure> */}
+            {/* <figure data-chromosome-id="10" className="js-chromosome chromosome">
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 69.2 222.8">
                 <path fill="#9D237C"
                       d="M29.6 71.2V14.8C29.6 6.8 23 0 14.8 0 6.6 0 0 6.6 0 14.8v56.4c0 4.4 2 8.4 5.1 11.1C2 85.1 0 89.1 0 93.5V208c0 8 6.6 14.8 14.8 14.8 8.2 0 14.8-6.6 14.8-14.8V93.5c0-4.4-2-8.4-5.1-11.1 3.1-2.6 5.1-6.6 5.1-11.2z"></path>
@@ -620,8 +620,8 @@ export default class Chromosomes extends Component {
               <figcaption className="chromosome-id">
                 12
               </figcaption>
-            </figure>
-            {/* <figure data-chromosome-id="13" className="js-chromosome chromosome">
+            </figure> */}
+            <figure data-chromosome-id="13" className="js-chromosome chromosome">
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 68.9 174.1">
                 <g fill="#731F5E">
                   <path
@@ -1000,55 +1000,37 @@ export default class Chromosomes extends Component {
                 22
               </figcaption>
             </figure>
-            <figure data-chromosome-id="X" className="js-chromosome chromosome haploid">
-              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 29.6 245.3">
-                <path fill="#6F3996"
-                      d="M29.6 81.1V14.8C29.6 6.8 23 0 14.8 0 6.6 0 0 6.6 0 14.8v66.3c0 4.4 2 8.4 5.1 11.1C2 95 0 99 0 103.4v126.9c0 8 6.6 14.8 14.8 14.8 8.2 0 14.8-6.6 14.8-14.8V103.4c0-4.4-2-8.4-5.1-11.1 3.1-2.6 5.1-6.6 5.1-11.2z"></path>
-                <path fill="#4B2871"
-                      d="M14.8 0C6.6 0 0 6.6 0 14.8v22.1h29.6V14.8C29.6 6.8 23 0 14.8 0zM0 63v18.1c0 4.4 2 8.4 5.1 11.1-.2 0-.2.2-.4.2h19.7c-.2 0-.2-.2-.4-.2 3.1-2.7 5.1-6.8 5.1-11.1V63H0zM0 106.1h29.6v73.2H0z"></path>
-                <path fill="#6F3996"
-                      d="M19.9 210.6l9.7-9.7v-7.7l-17.4 17.4M29.6 210.6v-2.9l-2.9 2.9M0 179.2v8.2h6.8L0 194.2v7.6l14.4-14.4h6.8L0 208.6v2h5.5l23.4-23.2h.7v-8.2"></path>
-                <path fill="#4B2871"
-                      d="M0 187.4v6.8l6.8-6.8M0 208.6l21.2-21.2h-6.8L0 201.8M29.6 187.4h-.7L5.5 210.8H0v19.7c0 8 6.6 14.8 14.8 14.8s14.8-6.6 14.8-14.8v-19.7h-2.9l2.9-2.9v-6.8l-9.7 9.7h-7.7l17.4-17.4v-6z"></path>
-                <path fill="#6F3996" d="M0 37.1h29.6V63H0z"></path>
+            <figure data-chromosome-id="X" className="js-chromosome chromosome">
+              <div className="haploid"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 29.6 245.3">
+              <path fill="#6F3996"
+              d="M29.6 81.1V14.8C29.6 6.8 23 0 14.8 0 6.6 0 0 6.6 0 14.8v66.3c0 4.4 2 8.4 5.1 11.1C2 95 0 99 0 103.4v126.9c0 8 6.6 14.8 14.8 14.8 8.2 0 14.8-6.6 14.8-14.8V103.4c0-4.4-2-8.4-5.1-11.1 3.1-2.6 5.1-6.6 5.1-11.2z"></path>
+              <path fill="#4B2871"
+              d="M14.8 0C6.6 0 0 6.6 0 14.8v22.1h29.6V14.8C29.6 6.8 23 0 14.8 0zM0 63v18.1c0 4.4 2 8.4 5.1 11.1-.2 0-.2.2-.4.2h19.7c-.2 0-.2-.2-.4-.2 3.1-2.7 5.1-6.8 5.1-11.1V63H0zM0 106.1h29.6v73.2H0z"></path>
+              <path fill="#6F3996"
+              d="M19.9 210.6l9.7-9.7v-7.7l-17.4 17.4M29.6 210.6v-2.9l-2.9 2.9M0 179.2v8.2h6.8L0 194.2v7.6l14.4-14.4h6.8L0 208.6v2h5.5l23.4-23.2h.7v-8.2"></path>
+              <path fill="#4B2871"
+              d="M0 187.4v6.8l6.8-6.8M0 208.6l21.2-21.2h-6.8L0 201.8M29.6 187.4h-.7L5.5 210.8H0v19.7c0 8 6.6 14.8 14.8 14.8s14.8-6.6 14.8-14.8v-19.7h-2.9l2.9-2.9v-6.8l-9.7 9.7h-7.7l17.4-17.4v-6z"></path>
+              <path fill="#6F3996" d="M0 37.1h29.6V63H0z"></path>
               </svg>
               <figcaption className="chromosome-id">
-                X
-              </figcaption>
+              X
+              </figcaption></div>
             </figure>
-            <figure data-chromosome-id="Y" className="js-chromosome chromosome haploid">
-              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 30 136.4">
-                <path fill="#4B2871"
-                      d="M29.6 25.4V14.8C29.6 6.8 23 0 14.8 0 6.6 0 0 6.6 0 14.8v10.6c0 4.4 2 8.4 5.1 11.1C2 39.3 0 43.3 0 47.7v73.8c0 8 6.6 14.8 14.8 14.8 8.2 0 14.8-6.6 14.8-14.8V47.7c0-4.4-2-8.4-5.1-11.1 3.1-2.6 5.1-6.6 5.1-11.2z"></path>
-                <path fill="#6F3996"
-                      d="M29.6 14.8C29.6 6.8 23 0 14.8 0S0 6.6 0 14.8v3.7h29.6v-3.7zM14.8 136.4c8.2 0 14.8-6.6 14.8-14.8V82H0v39.6c0 8.3 6.8 14.8 14.8 14.8z"></path>
-                <path fill="none"
-                      d="M29.6 100.3v-7.7l-23 23-6.6 6.6c0 2.2.7 4.2 1.6 6l12.6-12.6 15.4-15.3zM29.6 82.2h-3.7L0 107.9v7.7L29.6 86M0 82.2v4.6l4.7-4.6M11.5 82.2L0 93.7v7.5l19.2-19M29.6 115.8V107l-8.8 8.8-16.4 16.4c1.3 1.3 2.9 2.4 4.6 3.1l19.5-19.5h1.1zM14.8 136.4c8.2 0 15-6.6 15-14.8v-.2l-15 15z"></path>
-                <path fill="#4B2871"
-                      d="M29.6 25.4v-6.9H0v6.9c0 4.4 2 8.4 5.1 11.1C2 39.3 0 43.3 0 47.7V82h4.7L0 86.8v6.8L11.5 82h7.7l-19 19v6.8l25.9-25.9H30V47.5c0-4.4-2-8.4-5.1-11.1 2.7-2.4 4.7-6.4 4.7-11zM29.6 92.8V86L0 115.6v6.7l6.6-6.6 23-22.9zM29.6 107.2v-6.9l-15.5 15.5-12.6 12.6c.7 1.5 1.6 2.7 2.9 3.8l16.4-16.4 8.8-8.6zM29.6 115.8h-1.1L9 135.3c1.6.7 3.7 1.1 5.7 1.1l15-15v-5.6z"></path>
+            <figure data-chromosome-id="Y" className="js-chromosome chromosome">
+              <div className="haploid"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 30 136.4">
+              <path fill="#4B2871"
+              d="M29.6 25.4V14.8C29.6 6.8 23 0 14.8 0 6.6 0 0 6.6 0 14.8v10.6c0 4.4 2 8.4 5.1 11.1C2 39.3 0 43.3 0 47.7v73.8c0 8 6.6 14.8 14.8 14.8 8.2 0 14.8-6.6 14.8-14.8V47.7c0-4.4-2-8.4-5.1-11.1 3.1-2.6 5.1-6.6 5.1-11.2z"></path>
+              <path fill="#6F3996"
+              d="M29.6 14.8C29.6 6.8 23 0 14.8 0S0 6.6 0 14.8v3.7h29.6v-3.7zM14.8 136.4c8.2 0 14.8-6.6 14.8-14.8V82H0v39.6c0 8.3 6.8 14.8 14.8 14.8z"></path>
+              <path fill="none"
+              d="M29.6 100.3v-7.7l-23 23-6.6 6.6c0 2.2.7 4.2 1.6 6l12.6-12.6 15.4-15.3zM29.6 82.2h-3.7L0 107.9v7.7L29.6 86M0 82.2v4.6l4.7-4.6M11.5 82.2L0 93.7v7.5l19.2-19M29.6 115.8V107l-8.8 8.8-16.4 16.4c1.3 1.3 2.9 2.4 4.6 3.1l19.5-19.5h1.1zM14.8 136.4c8.2 0 15-6.6 15-14.8v-.2l-15 15z"></path>
+              <path fill="#4B2871"
+              d="M29.6 25.4v-6.9H0v6.9c0 4.4 2 8.4 5.1 11.1C2 39.3 0 43.3 0 47.7V82h4.7L0 86.8v6.8L11.5 82h7.7l-19 19v6.8l25.9-25.9H30V47.5c0-4.4-2-8.4-5.1-11.1 2.7-2.4 4.7-6.4 4.7-11zM29.6 92.8V86L0 115.6v6.7l6.6-6.6 23-22.9zM29.6 107.2v-6.9l-15.5 15.5-12.6 12.6c.7 1.5 1.6 2.7 2.9 3.8l16.4-16.4 8.8-8.6zM29.6 115.8h-1.1L9 135.3c1.6.7 3.7 1.1 5.7 1.1l15-15v-5.6z"></path>
               </svg>
               <figcaption className="chromosome-id">
-                Y
-              </figcaption>
+              Y
+              </figcaption></div>
             </figure>
-            <figure data-chromosome-id="MT" className="js-chromosome chromosome mito">
-              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 107.2 107">
-                <g fill="#4B2871">
-                  <path
-                    d="M107.2 53.2C107 23.7 82.9-.2 53.3 0 23.7.2-.2 24.1 0 53.7s24.3 53.3 53.9 53.2l-.2-29.4c-13.3 0-24.1-10.6-24.3-23.9 0-13.2 10.8-24.1 23.9-24.1 13.3 0 24.1 10.6 24.3 23.9 0 6.6-2.6 12.6-6.9 17-4.4 4.4-10.4 7.1-17 7.1l.2 29.4c14.8 0 28.1-6 37.8-15.9.7-.7 1.5-1.5 2.2-2.4C99 82.9 102.8 76 105 68.5c0-.2.2-.5.2-.7.2-.9.4-1.6.7-2.6.2-.5.2-.9.4-1.5.2-.9.4-2 .5-2.9 0-.4.2-.5.2-.7 0-2.4.2-4.6.2-6.9zM87.1 86.4l1.5 1.5-1.5-1.5z"></path>
-                  <path d="M91.7 91c9.7-9.7 15.5-23 15.5-37.8l-29.4.2c0 6.6-2.6 12.6-6.9 17L91.7 91z"></path>
-                </g>
-                <path fill="#6F3996"
-                      d="M79.8 79.3l26.1-26.1h-6.8L76.5 75.8 72.7 72l19-19h-6.8l-8.4 8.4c-1.1 3.3-2.9 6.4-5.7 8.8-4.4 4.4-10.4 7.1-17 7.1l.2 29.4c14.8 0 28.1-6 37.8-15.9l-4.6-4.6 17.9-17.9c.7-2.7 1.5-5.7 1.8-8.6L83.8 82.9l-4-3.6z"></path>
-                <path fill="#4B2871"
-                      d="M53.3.2C23.7.4-.2 24.3 0 53.9s24.3 53.3 53.9 53.2l-.2-29.4c-13.3 0-24.1-10.6-24.3-23.9 0-13.2 10.8-24.1 23.9-24.1 13.3 0 24.1 10.6 24.3 23.9h29.5C107 23.7 82.9 0 53.3.2z"></path>
-                <path fill="#6F3996"
-                      d="M98.4 82.7L95 86.2l-4 4 .7.7c1.5-1.5 2.9-3.1 4.2-4.7.9-1.1 1.6-2.2 2.5-3.5z"></path>
-              </svg>
-              <figcaption className="chromosome-id">
-                MT
-              </figcaption>
-            </figure> */}
           </div>
           <div className="pips js-pips hide-for-desktop">
             <div></div>

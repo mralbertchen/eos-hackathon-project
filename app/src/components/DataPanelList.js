@@ -38,10 +38,10 @@ export default class DataPanelList extends React.PureComponent {
 
     return (
       <Row>
-        <Col xs={9}>
+        <Col xs={8}>
           <ChromosomeSection />
         </Col>
-        <Col xs={3}>
+        <Col xs={4}>
           <QuestionPanel />
         </Col>
       </Row>

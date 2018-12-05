@@ -1,8 +1,7 @@
 body{
-    background-image: linear-gradient(93deg, #262532, #18191f);
-    padding-bottom:100px;
-  }
-
+  background-image: linear-gradient(93deg, #262532, #18191f);
+  padding-bottom:100px;
+}
 
   /* width */
 ::-webkit-scrollbar {
@@ -11,17 +10,17 @@ body{
 
 /* Track */
 ::-webkit-scrollbar-track {
-  background: $black; 
+  background: $black;
 }
 
 /* Handle */
 ::-webkit-scrollbar-thumb {
-  background: $darkgray; 
+  background: $darkgray;
 }
 
 /* Handle on hover */
 ::-webkit-scrollbar-thumb:hover {
-  background: $teal; 
+  background: $teal;
 }
 
 
@@ -104,7 +103,7 @@ table tr {
 }
 
 
-.container {
+.container-fluid {
   ul.nav {
     margin-top: 40px;
 table tr {
@@ -156,16 +155,11 @@ table tr {
     }
   }
 
- 
+
 
     section{
         margin: 40px 0 0 0;
         position: relative;
-
-        &::before{
-            @include pretty-lines;
-            background: $teal;
-        }
 
         h1{
             @include heading;
@@ -207,7 +201,7 @@ table tr {
                 background:$white;
                 margin: 20px 0 20px 0;
                 @include dim
-                
+
             }
 
             .activity-center{
@@ -215,7 +209,7 @@ table tr {
                 margin: 0 auto;
             }
 
-            
+
 
       h4 {
         @include card-heading;
@@ -305,7 +299,7 @@ table tr {
   h1{
     color:$pink;
   }
-  
+
   &::before{
     @include pretty-lines;
     background: $pink;
@@ -315,12 +309,12 @@ table tr {
     h4 {
       display: inline;
     }
-    
+
         @include dark-box;
         @include default-typog;
         @include box-shadow;
-    
-   
+
+
 
   }
 }
@@ -510,28 +504,20 @@ ul.recommend{
     @include subheading-typog;
 }
 
-
-
-
-
-
-
-
-
 $aos-distance: 10px !default;
 
 .text-white{
   @include card-number-heading;
 }
 
-.page-my-insights .container section h1{
+.page-my-insights .container-fluid section h1{
     @include heading;
     margin-bottom:20px;
     color:$pink;
 
   }
 
-  .page-my-insights .container section:before{
+  .page-my-insights .container-fluid section:before{
     background:$pink;
   }
 
@@ -550,7 +536,7 @@ $aos-distance: 10px !default;
 
   }
 
- 
+
     .card{
         @include dark-box;
         @include default-typog;
@@ -572,7 +558,7 @@ $aos-distance: 10px !default;
       display:block !important;
     }
   }
-  
+
 
   .modal-dialog{
 
@@ -612,12 +598,12 @@ $aos-distance: 10px !default;
     .purchase-confirmation{
       @include subheading-typog;
       color:$white;
-      
+
       strong{
         @include subheading-typog;
       }
     }
- 
+
   h5{
     h1{
       color:$yellow;
@@ -627,7 +613,7 @@ $aos-distance: 10px !default;
       text-transform: uppercase;
       font-size:$normal-text;
 
-      
+
     }
   }
   }
@@ -635,9 +621,9 @@ $aos-distance: 10px !default;
 
   .modal-backdrop.show{
     opacity:0.9;
-    background:$dark-gradient; 
+    background:$dark-gradient;
   }
-  
+
   .modal-content {
     position: relative;
     width: 100%;
@@ -658,4 +644,3 @@ font-size:$xxlarge-text;
 .crypto-amt{
   @include dim;
 }
-

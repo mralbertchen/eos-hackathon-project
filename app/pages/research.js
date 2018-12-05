@@ -62,7 +62,7 @@ export default class extends Component {
             preventEnterSubmission
             backButtonText="<- BACK"
             nextButtonText="NEXT ->"
-            nextTextOnFinalActionStep="pay and receive data"
+            nextTextOnFinalActionStep="Pay and start project"
           />
         </Container>
       </LayoutMain>

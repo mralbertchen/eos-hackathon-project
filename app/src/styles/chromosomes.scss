@@ -1,9 +1,7 @@
 .chromosomes-container .chromosomes {
   float: left;
   display: block;
-  margin-right: 1.69492%;
-  width: 83.05085%;
-  margin-left: 8.47458%;
+  width: 100%;
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -30,6 +28,15 @@
   -ms-flex-pack: justify;
   justify-content: space-between;
   position: relative;
+}
+
+.chromosome {
+  text-align: center;
+  width: 45px;
+}
+
+.haploid {
+  width: 50%;
 }
 
 .chromosomes-container .chromosomes, .chromosomes-container .texts {
