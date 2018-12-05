@@ -45,15 +45,15 @@ export default class ResearchConfirmation extends React.PureComponent {
           <span>YOUR PROJECT HAS BEEN CREATED</span>
         </ModalHeader>
         <ModalBody className="purchase-confirmation">
-          {this.renderDetailRow('Sample Size', `${request.totalCount} SUBJECTS`)}
+          {this.renderDetailRow('Sample Size', `${request.required} SUBJECTS`)}
           {this.renderDetailRow('Dataset', 'Age, Location, Weight')}
           {this.renderDetailRow('Cost', (
             <span>
               <img
-                src="/static/eos-yellow.svg"
+                src="/static/carbon-pink.svg"
                 style={{ width: 25, marginRight: 15 }}
               />
-              <span>{request.totalCost.toFixed(2)} EOS</span>
+              <span>{request.totalCost.toLocaleString(2)} CarbonUSD</span>
             </span>
           ))}
 {/*

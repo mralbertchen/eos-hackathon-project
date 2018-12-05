@@ -30,7 +30,7 @@ export default class Earnings extends React.Component {
   };
 
   render() {
-    const { lastEarnings, earnings } = this.state;
+    const { lastEarnings } = this.state;
 
     return (
       <div className="d-flex align-items-center earnings">
@@ -43,7 +43,7 @@ export default class Earnings extends React.Component {
             <CountUp
               component="span"
               start={lastEarnings}
-              end={earnings}
+              end={TransactionsStore.earnings}
               className="text-white"
               duration={2}
               formattingFn={val => val.toLocaleString()}
