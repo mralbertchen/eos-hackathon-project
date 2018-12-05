@@ -24,7 +24,8 @@ export default [
     name: 'Inherited Diabetes Test',
     price: '139.99 cUSD',
     vendor: 'Admera Health',
-    tags: ['health']
+    tags: ['health'],
+    color: '#2ffcce'
   },
   {
     image: placeholder,
@@ -33,7 +34,8 @@ export default [
     name: 'Food Sensitivity+',
     price: '231.99 cUSD',
     vendor: 'EverlyWell',
-    tags: ['wellness']
+    tags: ['wellness'],
+    color: '#ff007e'
   },
   {
     image:
@@ -43,7 +45,8 @@ export default [
     name: "Alzheimer's ApoE Test",
     price: '159.99 cUSD',
     vendor: 'ADx Healthcare',
-    tags: ['health']
+    tags: ['health'],
+    color: '#b55bff'
   },
   {
     image:
@@ -53,7 +56,8 @@ export default [
     name: 'Mayo Clinic GeneGuide™',
     price: '159.99 cUSD',
     vendor: 'Mayo Clinic',
-    tags: ['health']
+    tags: ['health'],
+    color: '#fff'
   },
   {
     image:
@@ -63,7 +67,8 @@ export default [
     name: 'CarrierCheck',
     price: '179.99 cUSD',
     vendor: 'Sema4',
-    tags: ['health']
+    tags: ['health'],
+    color: '#fff'
   },
   {
     image: placeholder,
@@ -72,7 +77,8 @@ export default [
     name: 'Diet Fitness Pro 360',
     price: '95.99 cUSD',
     vendor: 'DNAFit',
-    tags: ['wellness']
+    tags: ['wellness'],
+    color: '#fff'
   },
   {
     image: placeholder,
@@ -81,7 +87,8 @@ export default [
     name: 'Breast Milk DHA+',
     price: '129.99 cUSD',
     vendor: 'EverlyWell',
-    tags: ['wellness']
+    tags: ['wellness'],
+    color: '#fff'
   },
   {
     image: placeholder,
@@ -90,7 +97,8 @@ export default [
     name: 'Lose It! + embodyDNA',
     price: '44.99 cUSD',
     vendor: 'Lose It!',
-    tags: ['wellness']
+    tags: ['wellness'],
+    color: '#fff'
   },
   {
     image: placeholder,
@@ -98,7 +106,8 @@ export default [
     name: 'Beat Your Genes: Nutrition and Diet Coaching',
     price: '53.99 cUSD',
     vendor: 'Arivale',
-    tags: ['wellness']
+    tags: ['wellness'],
+    color: '#fff'
   },
   {
     image: placeholder,
@@ -106,7 +115,8 @@ export default [
     name: 'Metabolism+',
     price: '189.99 cUSD',
     vendor: 'EverlyWell',
-    tags: ['wellness']
+    tags: ['wellness'],
+    color: '#fff'
   },
   {
     image: placeholder,
@@ -115,7 +125,8 @@ export default [
     name: 'MyTraits Sport for iOS',
     price: '50.99 cUSD',
     vendor: 'Intelliseq',
-    tags: ['wellness']
+    tags: ['wellness'],
+    color: '#fff'
   },
   {
     image: placeholder,
@@ -124,7 +135,8 @@ export default [
     name: 'Heart Optimizer: Genetics and Nutrition Coaching',
     price: '53.99 cUSD',
     vendor: 'Arivale',
-    tags: ['wellness']
+    tags: ['wellness'],
+    color: '#fff'
   },
   {
     image: placeholder,
@@ -132,7 +144,8 @@ export default [
     name: 'Diet Pro',
     price: '79.99 cUSD',
     vendor: 'DNAFit',
-    tags: ['wellness']
+    tags: ['wellness'],
+    color: '#fff'
   },
   {
     image: placeholder,
@@ -141,7 +154,8 @@ export default [
     name: 'GoalGetter',
     price: '90.00 cUSD',
     vendor: 'InsideTracker',
-    tags: ['wellness']
+    tags: ['wellness'],
+    color: '#fff'
   },
   {
     image: placeholder,
@@ -150,7 +164,8 @@ export default [
     name: 'Fitness Buddy: All-Access Premium',
     price: '79.99 cUSD',
     vendor: 'Azumio',
-    tags: ['wellness']
+    tags: ['wellness'],
+    color: '#fff'
   },
   {
     image: placeholder,
@@ -158,7 +173,8 @@ export default [
     name: 'Diet GENius',
     price: '53.99 cUSD',
     vendor: 'Re:Point',
-    tags: ['wellness']
+    tags: ['wellness'],
+    color: '#fff'
   },
   {
     image: placeholder,
@@ -167,7 +183,8 @@ export default [
     name: 'EnduranceDNA',
     price: '35.99 cUSD',
     vendor: 'Carmichael Training Systems',
-    tags: ['wellness']
+    tags: ['wellness'],
+    color: '#fff'
   },
   {
     image: placeholder,
@@ -176,7 +193,8 @@ export default [
     name: 'MySleepInsights',
     price: '42.00 cUSD',
     vendor: 'MyVytalics',
-    tags: ['wellness']
+    tags: ['wellness'],
+    color: '#fff'
   },
   {
     image: placeholder,
@@ -185,7 +203,8 @@ export default [
     name: 'Inherited Cholesterol Test',
     price: '131.99 cUSD',
     vendor: 'Admera Health',
-    tags: ['health']
+    tags: ['health'],
+    color: '#fff'
   },
   {
     image: placeholder,
@@ -193,7 +212,8 @@ export default [
     name: 'Argus: All-Access Premium',
     price: '79.99 cUSD',
     vendor: 'Azumio',
-    tags: ['wellness']
+    tags: ['wellness'],
+    color: '#fff'
   },
   {
     image: placeholder,
@@ -201,6 +221,7 @@ export default [
     name: 'Calorie Mama: All-Access Premium',
     price: '79.99 cUSD',
     vendor: 'Azumio',
-    tags: ['wellness']
+    tags: ['wellness'],
+    color: '#fff'
   }
 ];

@@ -18,6 +18,7 @@ import cx from 'classnames';
 import LayoutMain from '../src/layouts/main';
 import Meta from '../src/components/Meta';
 import shopItems, { shopGroups } from '../src/store/shop';
+import MarketplaceImage from '../src/components/MarketplaceImage'
 
 /**
  * User marketplace
@@ -37,7 +38,9 @@ export default class extends Component {
     return (
       <Col key={item.name} xs={12} md={4}>
         <Card className="v-gutter card card-dark">
-          <CardImg top width="100%" src={item.image} alt={item.name}/>
+          <div className="pb-5 text-center">
+            <MarketplaceImage color={item.color } />
+          </div>
           <CardText>{item.description}</CardText>
           <CardTitle>{item.name}</CardTitle>
           <CardText className="card-vendor">by {item.vendor}</CardText>
