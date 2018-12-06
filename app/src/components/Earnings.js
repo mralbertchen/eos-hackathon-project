@@ -43,7 +43,7 @@ export default class Earnings extends React.Component {
             <CountUp
               component="span"
               start={lastEarnings}
-              end={TransactionsStore.earnings}
+              end={TransactionsStore.earnings || 0}
               className="text-white"
               duration={2}
               formattingFn={val => val.toLocaleString()}

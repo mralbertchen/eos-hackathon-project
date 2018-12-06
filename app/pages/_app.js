@@ -45,6 +45,8 @@ export default class MyApp extends App {
   render () {
     const { Component, pageProps } = this.props;
 
+    if ('class' in this.props) console.log('#### CLASS');
+
     return (
       <Container fluid={true}>
         <Component {...pageProps} />

@@ -1,7 +1,7 @@
-require('babel-register')({
+require('@babel/register')({
   presets: [
     [
-      'babel-preset-env',
+      '@babel/preset-env',
       {
         targets: {
           node: 'current',
@@ -10,7 +10,15 @@ require('babel-register')({
       }
     ]
   ],
-  plugins: [['transform-object-rest-spread', { useBuiltIns: true }]]
+  plugins: [
+    ['@babel/plugin-proposal-object-rest-spread', { useBuiltIns: true }],
+    ['styled-components',
+    {
+      "ssr": true,
+      "displayName": true,
+      "preprocess": false
+    }],
+  ]
 });
-require('babel-polyfill');
+require('@babel/polyfill');
 require('./src/server/server');
