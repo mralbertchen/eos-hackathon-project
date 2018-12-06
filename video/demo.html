@@ -8,23 +8,31 @@
       margin: 0;
       padding: 0;
       overflow: hidden;
+      background-color: #f7f7f7;
     }
 
     img {
-      width: 100%;
+      position: absolute;
+      left: 50%;
+      top: 0;
+      transform: translateX(-50%);
+      /*width: 100%;*/
+      height: 100%;
     }
 
     video {
       position: absolute;
-      left: 13.99253731343284%;
-      top: 11.27694859038143%;
-      width: 73.88059701492537%;
+      left: 50.2%;
+      top: calc(85 * 100vh / 694);
+      transform: translateX(-50%);
+      width: calc(752 * 100vh / 694);
+      border: 0;
     }
   </style>
 </head>
 <body>
   <div>
-    <img src="laptop.jpg" />
+    <img src="laptop_cut.jpg" />
     <video autoplay>
       <source src="geneos_demo.mp4" type="video/mp4" />
     </video>
