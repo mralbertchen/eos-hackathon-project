@@ -1,13 +1,11 @@
-import React, { Component } from 'react';
-import { Button,Container, Jumbotron, Row, Col } from 'reactstrap';
-import PropTypes from 'prop-types';
+import React from 'react';
+import { Container, Row, Col } from 'reactstrap';
 import styled from 'styled-components'
 
 import LayoutMain from '../src/layouts/main';
 import Meta from '../src/components/Meta';
-import { getMyItems } from '../src/actions/my';
-import DataPanelList from '../src/components/DataPanelList';
 import {EarnCredits, SequenceYourGenome, ReceiveInsight, FullVsPartial} from '../src/components/HomepageGraphics';
+import SubscribeForm from '../src/components/SubscribeForm';
 
 const YourGenomeImg = styled.img`
   width: 75%;
@@ -85,20 +83,7 @@ export default () => {
               <p style={{ color: '#d1d1d1', fontSize: 20, lineHeight: '1.4', fontFamily: 'Gilroy', width: '42ch', marginBottom: 30 }}>
                 Get rewarded by contributing to medical breakthroughs. Understand your genes. Own your health data.
               </p>
-              <div
-                style={{
-                  padding: '10px 20px',
-                  backgroundColor: '#FF3366',
-                  fontFamily: 'Gilroy',
-                  textTransform: 'uppercase',
-                  letterSpacing: 2,
-                  display: 'inline-block',
-                  color: '#fff',
-                  boxShadow: '0 0 20px #FF3366'
-                }}
-              >
-                Start earning credits
-              </div>
+              <SubscribeForm/>
             </Col>
             <Col lg="5">
               <img src="/static/hero.svg" className="img-fluid" />

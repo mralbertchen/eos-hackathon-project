@@ -88,7 +88,7 @@ export default class extends React.Component {
     const user = UserStore.getUser();
 
     return (
-      <div>
+      <div className="layout-main">
         <Navbar dark color="dark" expand="sm">
           <Link href="/">
             <NavbarBrand href="/">
