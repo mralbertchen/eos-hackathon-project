@@ -208,7 +208,7 @@ export default () => {
           </Row>
         </Container>
       </LayoutMain>
-      <Footer className="p-3 text-center">
+      <Footer className="p-3 text-center" style={{fontFamily: 'Gilroy'}}>
         <img src="/static/geneos-logo.svg" style={{ width: 75 }} className="mb-3" />
         <br />© GeneOS 2018
       </Footer>
