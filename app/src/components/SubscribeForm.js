@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import MailchimpSubscribe from 'react-mailchimp-subscribe';
-import { Button, Label, Input, Modal, ModalBody, Row, Col } from 'reactstrap';
+import { Button, Label, Input, Modal, ModalBody, ModalHeader, Row, Col } from 'reactstrap';
 
 const subscribeUrl = 'https://geneos.us19.list-manage.com/subscribe/post?u=ac93d9bf288611cc53df60c49&id=2e1d8768cd';
 const EMAIL_REGEX = /^([a-zA-Z0-9_\-\.]+)@([a-zA-Z0-9_\-\.]+)\.([a-zA-Z]{2,5})$/;
@@ -13,6 +13,10 @@ export default class SubscribeForm extends Component {
 
   handleStartClick = () => {
     this.setState({ showForm: true });
+  };
+
+  handleCloseClick = () => {
+    this.setState({ showForm: false });
   };
 
   handleChange(key, val) {
@@ -47,6 +51,7 @@ export default class SubscribeForm extends Component {
 
     return (
       <Modal isOpen={showForm}>
+        <ModalHeader toggle={this.handleCloseClick}>Sign Up</ModalHeader>
         <ModalBody>
           <MailchimpSubscribe
             url={subscribeUrl}
