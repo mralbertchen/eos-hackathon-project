@@ -7,7 +7,7 @@ let socket;
 
 export function getSocket() {
   if (!socket) {
-    socket = io('http://localhost:3000');
+    socket = io(process.env.NODE_ENV === 'production' ? '/' : 'http://localhost:3000');
   }
 
   return socket;

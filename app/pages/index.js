@@ -74,7 +74,7 @@ const BodyText = styled.div`
  */
 export default () => {
   return <div>
-      <LayoutMain isAnonymous>
+      <LayoutMain isAnonymous className="layout-main">
         <Meta title="GeneOS" />
 
         <Container>

@@ -84,12 +84,12 @@ export default class extends React.Component {
   }
 
   render() {
-    const { children, isAnonymous } = this.props;
+    const { children, isAnonymous, className } = this.props;
 
     const user = UserStore.getUser();
 
     return (
-      <div className="layout-main">
+      <div className={className}>
         <Navbar dark color="dark" expand="sm">
           <Link href="/">
             <NavbarBrand href="/">
