@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 
 export class SequenceYourGenome extends Component {
   render() {
-    return <svg height="100%" viewBox="0 0 361 289" width="361" xmlns="http://www.w3.org/2000/svg">
+    return <svg height="100%" viewBox="0 0 361 289" width="100%" xmlns="http://www.w3.org/2000/svg">
         <linearGradient id="a" x1="49.974969%" x2="49.974969%" y1="99.99111%" y2="-.000114%">
           <stop offset="0" stopColor="#808080" stopOpacity=".25" />
           <stop offset=".54" stopColor="#808080" stopOpacity=".12" />
@@ -97,7 +97,7 @@ export class SequenceYourGenome extends Component {
 
 export class EarnCredits extends Component {
   render() {
-    return <svg height="100%" viewBox="0 0 371 240" width="371" xmlns="http://www.w3.org/2000/svg">
+    return <svg height="100%" viewBox="0 0 371 240" width="100%" xmlns="http://www.w3.org/2000/svg">
         <linearGradient id="a" x1="49.987925%" x2="49.987925%" y1="99.993891%" y2="-.007389%">
           <stop offset="0" stopColor="#808080" stopOpacity=".25" />
           <stop offset=".54" stopColor="#808080" stopOpacity=".12" />
@@ -225,7 +225,7 @@ export class EarnCredits extends Component {
 
 export class ReceiveInsight extends Component {
   render() {
-    return <svg height="100%" viewBox="0 0 384 272" width="384" xmlns="http://www.w3.org/2000/svg">
+    return <svg height="100%" viewBox="0 0 384 272" width="100%" xmlns="http://www.w3.org/2000/svg">
         <linearGradient id="a" x1="49.99502%" x2="49.99502%" y1="100.003398%" y2=".00018%">
           <stop offset="0" stopColor="#808080" stopOpacity=".25" />
           <stop offset=".54" stopColor="#808080" stopOpacity=".12" />

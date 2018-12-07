@@ -3,6 +3,7 @@ import React from 'react';
 import Link from 'next/link';
 import Router from 'next/router';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import styled from 'styled-components'
 
 import User from '../components/User';
 import UserStore from '../store/user';
@@ -105,13 +106,6 @@ export default class extends React.Component {
             </Nav>
           )}
           <Nav navbar className="ml-auto navbar-nav-right">
-            <NavItem>
-              <Link href="/">
-                <NavLink href="/" className="nav-link-icon">
-                  <FontAwesomeIcon icon={iconBell} size="2x" />
-                </NavLink>
-              </Link>
-            </NavItem>
             <NavItem>
               <User />
             </NavItem>
