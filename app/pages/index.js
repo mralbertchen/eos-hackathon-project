@@ -143,20 +143,7 @@ export default () => {
           <BodyText class>
             Get sequenced. Discover your DNA and ancestry.
           </BodyText>
-          <div
-            style={{
-              padding: '10px 20px',
-              backgroundColor: '#FF3366',
-              fontFamily: 'Gilroy',
-              textTransform: 'uppercase',
-              letterSpacing: 2,
-              display: 'inline-block',
-              color: '#fff',
-              boxShadow: '0 0 20px #FF3366'
-            }}
-          >
-            Start earning credits
-          </div>
+          <SubscribeForm/>
         </div>
         <YourGenomeImg src="../static/your_genome.png" />
       </Container>
