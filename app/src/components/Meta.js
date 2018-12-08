@@ -19,6 +19,7 @@ class Meta extends React.Component {
       <div>
         <Head>
           <title>{title}</title>
+
         </Head>
       </div>
     );

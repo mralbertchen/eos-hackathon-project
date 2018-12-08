@@ -82,9 +82,9 @@ export default () => {
             <Row className="d-flex align-items-center">
               <Col className="mb-5 mb-lg-0">
                 <MarketingH1>
-                  <b>The future of health</b>
+                  <b>Your DNA,</b>
                   <br />
-                  is in your DNA
+                  Your health
                 </MarketingH1>
                 <p
                   style={{
@@ -96,8 +96,7 @@ export default () => {
                     marginBottom: 30
                   }}
                 >
-                  Get rewarded by contributing to medical breakthroughs.
-                  Understand your genes. Own your health data.
+                  Earn credits by answering questions about you medical history. Sequence your full genome and get life-changing insight.
                 </p>
                 <SubscribeForm />
               </Col>
@@ -119,8 +118,7 @@ export default () => {
                 </ThreePointImg>
                 <ThreePointHeading>Earn credits</ThreePointHeading>
                 <ThreePointText>
-                  Answer survey questions, get credits, and redeem them for
-                  valuable rewards.
+                  Answer questions about your health to earn valuable credits.
                 </ThreePointText>
               </Col>
               <Col className="mb-5" md="4">
@@ -129,8 +127,7 @@ export default () => {
                 </ThreePointImg>
                 <ThreePointHeading>Sequence your genome</ThreePointHeading>
                 <ThreePointText>
-                  Understand your genome, explore your ancestry, and learn
-                  about your inherited traits for just $99.
+                  Sequence your full genome at low-cost.
                 </ThreePointText>
               </Col>
               <Col className="mb-5" md="4">
@@ -138,11 +135,10 @@ export default () => {
                   <ReceiveInsight />
                 </ThreePointImg>
                 <ThreePointHeading>
-                  Receive life-changing insight
+                  Change your life
                 </ThreePointHeading>
                 <ThreePointText>
-                  Receive insights, analytics, and rewards for you
-                  contributions.
+                  Receive powerful insights to improve your health, diet, physical performance and much more.
                 </ThreePointText>
               </Col>
             </Row>
@@ -164,7 +160,7 @@ export default () => {
                 Partial sequencing
               </div>
               <div>
-                Services like 23&Me and Ancestry read a <b>tiny fraction</b> of your genetic data
+                Services like 23&Me and Ancestry only read a <b>tiny</b> part of your DNA
               </div>
             </Col>
             <Col className="text-center" sm="1">
@@ -181,7 +177,7 @@ export default () => {
                 Full genome sequencing
               </div>
               <div>
-                GeneOS reads your <b>whole</b> genome – what you need to get revolutionary health insight
+                GeneOS reads <b>all your DNA</b> – that's what you need for truly revolutionary insight
               </div>
             </Col>
             <Col>
@@ -193,13 +189,10 @@ export default () => {
           <Row className="d-flex align-items-center">
             <Col sm="6" className="mb-5 mb-sm-0">
               <MarketingH3 className="mb-2">
-                Become one of the first to <b>
-                  profit from your own genomic data
+                <b>
+                  Join the genomic revolution
                 </b>
               </MarketingH3>
-              <BodyText className="mb-4 lead">
-                Get sequenced. Discover your DNA and ancestry.
-              </BodyText>
               <SubscribeForm />
             </Col>
             <Col sm="6" className="pr-0">
