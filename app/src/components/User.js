@@ -125,10 +125,10 @@ export default class User extends React.Component {
             <div className="user-name">{user && user.name}</div> <FontAwesomeIcon icon={iconUser} size="2x" />
           </DropdownToggle>
           <DropdownMenu right>
-            {users.map(user => (
-              <DropdownItem key={user.name} onClick={() => this.handleSelectUser(user)}>{user.name}</DropdownItem>
-            ))}
-            <DropdownItem key="logout" onClick={() => this.handleLogout()}>Logout</DropdownItem>
+            {/*{users.map(user => (*/}
+              {/*<DropdownItem key={user.name} onClick={() => this.handleSelectUser(user)}>{user.name}</DropdownItem>*/}
+            {/*))}*/}
+            {/*<DropdownItem key="logout" onClick={() => this.handleLogout()}>Logout</DropdownItem>*/}
           </DropdownMenu>
         </UncontrolledDropdown>
         {this.renderDataRequests()}
